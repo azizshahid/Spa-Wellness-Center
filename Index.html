@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serenity Spa - Ultimate Relaxation Experience</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-spa"></i>
+          <span>Serenity Spa</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#treatments" class="nav-link">Treatments</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="book-now-btn">Book Now</button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-image" data-aos="fade-right" data-aos-duration="1000">
+          <img
+            src="./assets/images/hero-image/Spa hero Image.jpg"
+            alt="Serene Spa Experience"
+          />
+        </div>
+        <div
+          class="hero-content"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          <h1>Discover Your Inner Peace</h1>
+          <p>
+            Escape the everyday stress and immerse yourself in our tranquil
+            sanctuary. Experience world-class treatments designed to rejuvenate
+            your body, mind, and soul.
+          </p>
+          <button class="cta-btn">Explore Treatments</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature Treatments -->
+    <section class="treatments" id="treatments">
+      <div class="container">
+        <h2 data-aos="fade-up">Signature Treatment Highlights</h2>
+        <div class="treatments-grid">
+          <div class="treatment-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="treatment-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Aromatherapy Massage</h3>
+            <p>
+              Indulge in our signature aromatherapy massage using premium
+              essential oils to restore balance and harmony.
+            </p>
+          </div>
+          <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="treatment-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3>Diamond Facial</h3>
+            <p>
+              Experience luxury with our diamond-infused facial treatment that
+              leaves your skin radiant and youthful.
+            </p>
+          </div>
+          <div class="treatment-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="treatment-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <h3>Hydrotherapy</h3>
+            <p>
+              Rejuvenate your body with our therapeutic water treatments
+              designed to improve circulation and wellness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Relaxation Journey -->
+    <section class="journey" id="about">
+      <div class="container">
+        <h2 data-aos="fade-up">Our Relaxation Journey</h2>
+        <div class="journey-steps">
+          <div class="step" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-number">1</div>
+            <h3>Welcome & Consultation</h3>
+            <p>
+              Begin with a personalized consultation to understand your wellness
+              goals
+            </p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-number">2</div>
+            <h3>Preparation Ritual</h3>
+            <p>
+              Enjoy our signature preparation ritual in our tranquil relaxation
+              lounge
+            </p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-number">3</div>
+            <h3>Treatment Experience</h3>
+            <p>
+              Immerse yourself in your chosen treatment with our expert
+              therapists
+            </p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step" data-aos="fade-up" data-aos-delay="400">
+            <div class="step-number">4</div>
+            <h3>Aftercare & Reflection</h3>
+            <p>
+              Complete your journey with personalized aftercare recommendations
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" data-aos="fade-up">
+  <div class="container">
+    <div class="testimonials-content">
+      <div class="testimonials-image" data-aos="fade-right">
+        <img src="./assets/images/Testimonials/Emma.png" alt="Happy Client" />
+      </div>
+      <div class="testimonials-cards" data-aos="fade-left">
+        <h2>Client Experiences</h2>
+        <div class="testimonial-carousel">
+          <div class="testimonial-card active">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>
+              "The most relaxing experience I've ever had. The aromatherapy massage was absolutely divine!"
+            </p>
+            <div class="client-info">
+              <img src="/placeholder.svg?height=50&width=50&text=SJ" alt="Sarah Johnson" />
+              <div>
+                <h4>Sarah Johnson</h4>
+                <span>Regular Client</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-in">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>
+              "Professional staff, luxurious facilities, and treatments that truly transform. Highly recommended!"
+            </p>
+            <div class="client-info">
+              <img src="/placeholder.svg?height=50&width=50&text=MC" alt="Michael Chen" />
+              <div>
+                <h4>Michael Chen</h4>
+                <span>VIP Member</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-in">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>
+              "A sanctuary of peace in the city. Every visit leaves me feeling renewed and refreshed."
+            </p>
+            <div class="client-info">
+              <img src="/placeholder.svg?height=50&width=50&text=ED" alt="Emma Davis" />
+              <div>
+                <h4>Emma Davis</h4>
+                <span>Wellness Enthusiast</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-nav">
+          <button class="nav-dot active" data-slide="0"></button>
+          <button class="nav-dot" data-slide="1"></button>
+          <button class="nav-dot" data-slide="2"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Virtual Gallery -->
+    <section class="gallery">
+      <div class="container">
+        <h2 data-aos="fade-up">Explore Spa Virtually</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="./assets/images/virtual-tour/treatement-rooms.png"
+              alt="Treatment Room"
+            />
+            <div class="gallery-content">
+              <h3>Treatment Rooms</h3>
+              <p>
+                Step into our serene treatment rooms designed for ultimate
+                relaxation and privacy.
+              </p>
+              <button class="tour-btn">Take a Virtual Tour</button>
+            </div>
+          </div>
+          <div
+            class="gallery-item reverse"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="./assets/images/virtual-tour/relaxation-room.png"
+              alt="Relaxation Lounge"
+            />
+            <div class="gallery-content">
+              <h3>Relaxation Lounge</h3>
+              <p>
+                Unwind in our peaceful lounge area before and after your
+                treatments.
+              </p>
+              <button class="tour-btn">Take a Virtual Tour</button>
+            </div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="./assets/images/virtual-tour/hydrotherapy-area.png"
+              alt="Hydrotherapy Area"
+            />
+            <div class="gallery-content">
+              <h3>Hydrotherapy Area</h3>
+              <p>
+                Experience the healing power of water in our state-of-the-art
+                hydrotherapy facilities.
+              </p>
+              <button class="tour-btn">Take a Virtual Tour</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-number">13+</div>
+            <div class="stat-label">Expert Therapists</div>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-icon">
+              <i class="fas fa-spa"></i>
+            </div>
+            <div class="stat-number">32</div>
+            <div class="stat-label">Signature Services</div>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-icon">
+              <i class="fas fa-door-open"></i>
+            </div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Luxury Treatment Rooms</div>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="stat-number">2</div>
+            <div class="stat-label">Industry Awards</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content" data-aos="fade-up">
+          <h2>Stay Connected with Serenity</h2>
+          <p>
+            Subscribe to receive exclusive offers, wellness tips, and updates
+            about our latest treatments.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Serenity Spa</h3>
+            <p>
+              Your premier destination for relaxation and wellness. We combine
+              ancient healing traditions with modern luxury to create
+              transformative experiences.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#treatments">Treatments</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Massage Therapy</a></li>
+              <li><a href="#">Facial Treatments</a></li>
+              <li><a href="#">Body Treatments</a></li>
+              <li><a href="#">Hydrotherapy</a></li>
+              <li><a href="#">Wellness Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Wellness Street,
+                Serenity City, SC 12345
+              </p>
+              <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@serenityspa.com</p>
+              <p><i class="fas fa-clock"></i> Mon-Sun: 9:00 AM - 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Serenity Spa. All rights reserved. | Privacy Policy |
+            Terms of Service
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="./Index.js"></script>
+  </body>
+</html>
