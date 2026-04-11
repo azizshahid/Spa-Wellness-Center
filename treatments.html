@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,523 +28,7 @@
     <!-- Your existing stylesheets -->
     <link rel="stylesheet" href="./CSS/styles.css" />
     <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css" />
-
-    <style>
-      /* ── Page-specific additions (no new variables) ── */
-
-      /* Filter bar */
-      .filter-bar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 3rem;
-      }
-
-      .filter-btn {
-        background: transparent;
-        border: 1.5px solid var(--secondary-color);
-        color: var(--text-dark);
-        padding: 9px 22px;
-        border-radius: 999px;
-        font-family: "Inter", sans-serif;
-        font-size: 0.88rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .filter-btn:hover,
-      .filter-btn.active {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-        color: var(--white);
-      }
-
-      /* Treatment card extended */
-      .treatment-card .treatment-meta {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.2rem;
-        margin: 1rem 0;
-        font-size: 0.82rem;
-        color: var(--text-light);
-      }
-
-      .treatment-card .treatment-meta span {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .treatment-card .treatment-meta i {
-        color: var(--accent-color);
-      }
-
-      .treatment-price {
-        font-family: "Playfair Display", serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin: 0.8rem 0;
-      }
-
-      .treatment-price span {
-        font-family: "Inter", sans-serif;
-        font-size: 0.82rem;
-        color: var(--text-light);
-        font-weight: 400;
-      }
-
-      .treatment-tag {
-        display: inline-block;
-        background: rgba(212, 175, 55, 0.12);
-        color: var(--accent-color);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 4px 12px;
-        border-radius: 999px;
-        margin-bottom: 0.8rem;
-      }
-
-      /* Featured treatment */
-      .featured-treatment {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        box-shadow: var(--shadow-hover);
-        margin-bottom: 2.5rem;
-      }
-
-      .featured-treatment-img {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .featured-treatment-img img {
-        width: 100%;
-        height: 100%;
-        min-height: 420px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.6s ease;
-      }
-
-      .featured-treatment:hover .featured-treatment-img img {
-        transform: scale(1.04);
-      }
-
-      .featured-badge {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: var(--accent-color);
-        color: var(--white);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 6px 16px;
-        border-radius: 999px;
-      }
-
-      .featured-treatment-content {
-        background: var(--white);
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .featured-treatment-content .treatment-tag {
-        align-self: flex-start;
-      }
-
-      .featured-treatment-content h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        line-height: 1.25;
-      }
-
-      .featured-treatment-content p {
-        color: var(--text-light);
-        line-height: 1.8;
-        margin-bottom: 1.4rem;
-      }
-
-      .featured-treatment-content .treatment-meta {
-        justify-content: flex-start;
-        margin-bottom: 1.4rem;
-      }
-
-      .featured-treatment-content .treatment-price {
-        margin-bottom: 1.8rem;
-      }
-
-      /* Benefits list */
-      .benefit-list {
-        list-style: none;
-        margin-bottom: 1.8rem;
-      }
-
-      .benefit-list li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.9rem;
-        color: var(--text-light);
-        margin-bottom: 0.55rem;
-      }
-
-      .benefit-list li i {
-        color: var(--secondary-color);
-        font-size: 0.85rem;
-        flex-shrink: 0;
-      }
-
-      /* Pricing table */
-      .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-      }
-
-      .pricing-card {
-        background: var(--white);
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-        padding: 2.5rem;
-        text-align: center;
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .pricing-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--secondary-color);
-        transition: var(--transition);
-      }
-
-      .pricing-card.featured-price::before {
-        background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-        height: 5px;
-      }
-
-      .pricing-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .pricing-card .plan-name {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--accent-color);
-        margin-bottom: 0.5rem;
-      }
-
-      .pricing-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.4rem;
-        color: var(--primary-color);
-        margin-bottom: 1.4rem;
-      }
-
-      .pricing-amount {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        line-height: 1;
-        margin-bottom: 0.3rem;
-      }
-
-      .pricing-amount sup {
-        font-size: 1.4rem;
-        vertical-align: super;
-      }
-
-      .pricing-duration {
-        font-size: 0.82rem;
-        color: var(--text-light);
-        margin-bottom: 1.8rem;
-      }
-
-      .pricing-features {
-        list-style: none;
-        text-align: left;
-        margin-bottom: 2rem;
-      }
-
-      .pricing-features li {
-        padding: 0.6rem 0;
-        border-bottom: 1px solid var(--light-bg);
-        font-size: 0.9rem;
-        color: var(--text-light);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .pricing-features li i {
-        color: var(--secondary-color);
-        font-size: 0.82rem;
-        flex-shrink: 0;
-      }
-
-      .pricing-features li:last-child {
-        border-bottom: none;
-      }
-
-      /* Popular badge */
-      .popular-badge {
-        position: absolute;
-        top: 18px;
-        right: -28px;
-        background: var(--accent-color);
-        color: var(--white);
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding: 5px 36px;
-        transform: rotate(45deg);
-      }
-
-      /* Process steps (horizontal) */
-      .process-row {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        position: relative;
-      }
-
-      .process-row::before {
-        content: "";
-        position: absolute;
-        top: 32px;
-        left: calc(12.5% + 16px);
-        right: calc(12.5% + 16px);
-        height: 2px;
-        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-      }
-
-      .process-step {
-        text-align: center;
-        padding: 0 1rem;
-        position: relative;
-      }
-
-      .process-num {
-        width: 64px;
-        height: 64px;
-        background: var(--white);
-        border: 2px solid var(--secondary-color);
-        color: var(--primary-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Playfair Display", serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin: 0 auto 1.2rem;
-        position: relative;
-        z-index: 1;
-        background: var(--white);
-        transition: var(--transition);
-      }
-
-      .process-step:hover .process-num {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-        color: var(--white);
-      }
-
-      .process-step h4 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.05rem;
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
-      }
-
-      .process-step p {
-        font-size: 0.85rem;
-        color: var(--text-light);
-        line-height: 1.65;
-      }
-
-      /* Add-ons chips */
-      .addons-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.2rem;
-      }
-
-      .addon-chip {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        background: var(--white);
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-        padding: 1.1rem 1.3rem;
-        transition: var(--transition);
-        cursor: pointer;
-      }
-
-      .addon-chip:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .addon-chip-icon {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .addon-chip-icon i {
-        color: var(--white);
-        font-size: 0.95rem;
-      }
-
-      .addon-chip-text h5 {
-        font-size: 0.9rem;
-        color: var(--primary-color);
-        margin-bottom: 2px;
-      }
-
-      .addon-chip-text p {
-        font-size: 0.78rem;
-        color: var(--text-light);
-      }
-
-      /* CTA banner */
-      .cta-banner {
-        background: linear-gradient(135deg, var(--primary-color) 0%, #1a3d16 100%);
-        border-radius: var(--border-radius);
-        padding: 4rem 3rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cta-banner::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          radial-gradient(circle at 15% 50%, rgba(143,188,143,0.15) 0%, transparent 50%),
-          radial-gradient(circle at 85% 30%, rgba(212,175,55,0.10) 0%, transparent 50%);
-        pointer-events: none;
-      }
-
-      .cta-banner h2 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
-        color: var(--white);
-        margin-bottom: 0.8rem;
-        position: relative;
-      }
-
-      .cta-banner p {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 1.05rem;
-        max-width: 500px;
-        margin: 0 auto 2rem;
-        line-height: 1.75;
-        position: relative;
-      }
-
-      .cta-banner-btns {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        position: relative;
-      }
-
-      .cta-banner .book-now-btn {
-        background: var(--accent-color);
-        padding: 14px 32px;
-        font-size: 1rem;
-      }
-
-      .cta-banner .book-now-btn:hover {
-        background: #b8941f;
-      }
-
-      .btn-ghost {
-        background: transparent;
-        border: 2px solid rgba(255,255,255,0.5);
-        color: var(--white);
-        padding: 14px 32px;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .btn-ghost:hover {
-        border-color: var(--white);
-        background: rgba(255,255,255,0.08);
-        transform: translateY(-2px);
-      }
-
-      /* Hide cards by filter */
-      .treatment-card[data-hidden="true"] {
-        display: none;
-      }
-
-      /* Responsive */
-      @media (max-width: 900px) {
-        .featured-treatment {
-          grid-template-columns: 1fr;
-        }
-
-        .featured-treatment-img img {
-          min-height: 300px;
-        }
-
-        .process-row {
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-        }
-
-        .process-row::before { display: none; }
-      }
-
-      @media (max-width: 600px) {
-        .process-row { grid-template-columns: 1fr; }
-        .featured-treatment-content { padding: 2rem 1.5rem; }
-        .cta-banner { padding: 3rem 1.5rem; }
-      }
-    </style>
+    <link rel="stylesheet" href="./CSS/treatments.css">
   </head>
 
   <body>
@@ -558,7 +42,14 @@
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="treatments.html" class="nav-link" style="color:var(--primary-color)">Treatments</a></li>
+          <li>
+            <a
+              href="treatments.html"
+              class="nav-link"
+              style="color: var(--primary-color)"
+              >Treatments</a
+            >
+          </li>
           <li><a href="gallery.html" class="nav-link">Gallery</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -620,30 +111,50 @@
             <p>
               A transformative three-hour journey using warm Himalayan salt
               stones, cold-pressed argan oil, and rare Kashmiri saffron. The
-              ritual begins with a rose-petal foot soak, followed by a
-              full-body exfoliation and a deeply restorative hot-stone massage.
+              ritual begins with a rose-petal foot soak, followed by a full-body
+              exfoliation and a deeply restorative hot-stone massage.
             </p>
 
-            <div class="treatment-meta" style="justify-content:flex-start; margin-bottom:1rem;">
+            <div
+              class="treatment-meta"
+              style="justify-content: flex-start; margin-bottom: 1rem"
+            >
               <span><i class="fas fa-clock"></i> 180 min</span>
               <span><i class="fas fa-user"></i> Solo / Couple</span>
               <span><i class="fas fa-fire-alt"></i> Hot Stones</span>
             </div>
 
             <ul class="benefit-list">
-              <li><i class="fas fa-check-circle"></i> Deep muscle tension release</li>
-              <li><i class="fas fa-check-circle"></i> Skin brightening & hydration</li>
-              <li><i class="fas fa-check-circle"></i> Nervous system regulation</li>
-              <li><i class="fas fa-check-circle"></i> Complimentary herbal tea service</li>
+              <li>
+                <i class="fas fa-check-circle"></i> Deep muscle tension release
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Skin brightening & hydration
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Nervous system regulation
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Complimentary herbal tea
+                service
+              </li>
             </ul>
 
             <div class="treatment-price">₹8,500 <span>/ session</span></div>
 
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <button class="book-now-btn" style="padding:13px 28px;">
-                <i class="fas fa-calendar-check" style="margin-right:8px;"></i>Book This Ritual
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <button class="book-now-btn" style="padding: 13px 28px">
+                <i class="fas fa-calendar-check" style="margin-right: 8px"></i
+                >Book This Ritual
               </button>
-              <button class="tour-btn" style="background:transparent; color:var(--primary-color); border:1.5px solid var(--primary-color);">
+              <button
+                class="tour-btn"
+                style="
+                  background: transparent;
+                  color: var(--primary-color);
+                  border: 1.5px solid var(--primary-color);
+                "
+              >
                 Learn More
               </button>
             </div>
@@ -675,151 +186,293 @@
 
         <!-- Grid -->
         <div class="treatments-grid" id="treatments-grid">
-
           <!-- 1 -->
-          <div class="treatment-card" data-category="massage" data-aos="fade-up" data-aos-delay="0">
+          <div
+            class="treatment-card"
+            data-category="massage"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <div class="treatment-icon">
               <i class="fas fa-hands"></i>
             </div>
             <span class="treatment-tag">Massage</span>
             <h3>Swedish Relaxation</h3>
-            <p>A classic full-body massage using flowing strokes and gentle kneading to ease tension and improve circulation.</p>
+            <p>
+              A classic full-body massage using flowing strokes and gentle
+              kneading to ease tension and improve circulation.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 60 / 90 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.9</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.9</span
+              >
             </div>
             <div class="treatment-price">₹3,200 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 2 -->
-          <div class="treatment-card" data-category="massage" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="treatment-card"
+            data-category="massage"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="treatment-icon">
               <i class="fas fa-fire-alt"></i>
             </div>
             <span class="treatment-tag">Massage</span>
             <h3>Deep Tissue Therapy</h3>
-            <p>Targets deep muscle layers to release chronic knots, scar tissue, and persistent postural tension.</p>
+            <p>
+              Targets deep muscle layers to release chronic knots, scar tissue,
+              and persistent postural tension.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 75 / 105 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.8</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.8</span
+              >
             </div>
             <div class="treatment-price">₹4,100 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 3 -->
-          <div class="treatment-card" data-category="facial" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="treatment-card"
+            data-category="facial"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="treatment-icon">
               <i class="fas fa-seedling"></i>
             </div>
             <span class="treatment-tag">Facial</span>
             <h3>Botanical Glow Facial</h3>
-            <p>A vitamin-rich facial using cold-pressed rosehip, sea-kelp extracts, and a jade-roller sculpting technique.</p>
+            <p>
+              A vitamin-rich facial using cold-pressed rosehip, sea-kelp
+              extracts, and a jade-roller sculpting technique.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 60 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 5.0</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                5.0</span
+              >
             </div>
             <div class="treatment-price">₹3,800 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 4 -->
-          <div class="treatment-card" data-category="body" data-aos="fade-up" data-aos-delay="0">
+          <div
+            class="treatment-card"
+            data-category="body"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <div class="treatment-icon">
               <i class="fas fa-leaf"></i>
             </div>
             <span class="treatment-tag">Body Rituals</span>
             <h3>Neem & Turmeric Wrap</h3>
-            <p>An Ayurvedic body wrap infused with purifying neem and brightening turmeric, followed by a mineral mud rinse.</p>
+            <p>
+              An Ayurvedic body wrap infused with purifying neem and brightening
+              turmeric, followed by a mineral mud rinse.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 90 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.7</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.7</span
+              >
             </div>
             <div class="treatment-price">₹4,500 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 5 -->
-          <div class="treatment-card" data-category="wellness" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="treatment-card"
+            data-category="wellness"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="treatment-icon">
               <i class="fas fa-spa"></i>
             </div>
             <span class="treatment-tag">Wellness</span>
             <h3>Aromatherapy Journey</h3>
-            <p>Essential-oil inhalation rituals combined with lymphatic-stimulating massage to calm the nervous system.</p>
+            <p>
+              Essential-oil inhalation rituals combined with
+              lymphatic-stimulating massage to calm the nervous system.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 60 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.9</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.9</span
+              >
             </div>
             <div class="treatment-price">₹3,500 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 6 -->
-          <div class="treatment-card" data-category="couple" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="treatment-card"
+            data-category="couple"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="treatment-icon">
               <i class="fas fa-heart"></i>
             </div>
             <span class="treatment-tag">Couples</span>
             <h3>Moonlit Couples Ritual</h3>
-            <p>A shared sanctuary experience with side-by-side massages, a private champagne bath, and rose-petal body polish.</p>
+            <p>
+              A shared sanctuary experience with side-by-side massages, a
+              private champagne bath, and rose-petal body polish.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 120 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 5.0</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                5.0</span
+              >
             </div>
             <div class="treatment-price">₹14,000 <span>/ couple</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 7 -->
-          <div class="treatment-card" data-category="facial" data-aos="fade-up" data-aos-delay="0">
+          <div
+            class="treatment-card"
+            data-category="facial"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <div class="treatment-icon">
               <i class="fas fa-gem"></i>
             </div>
             <span class="treatment-tag">Facial</span>
             <h3>24K Gold Radiance</h3>
-            <p>A luxe treatment using colloidal gold serums and microcurrent lifting to restore youthful luminosity and firmness.</p>
+            <p>
+              A luxe treatment using colloidal gold serums and microcurrent
+              lifting to restore youthful luminosity and firmness.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 75 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.9</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.9</span
+              >
             </div>
             <div class="treatment-price">₹6,200 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 8 -->
-          <div class="treatment-card" data-category="body" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="treatment-card"
+            data-category="body"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="treatment-icon">
               <i class="fas fa-water"></i>
             </div>
             <span class="treatment-tag">Body Rituals</span>
             <h3>Coconut Milk Scrub</h3>
-            <p>A tropical exfoliation ritual with raw coconut sugar and cold-pressed coconut milk, leaving skin silky smooth.</p>
+            <p>
+              A tropical exfoliation ritual with raw coconut sugar and
+              cold-pressed coconut milk, leaving skin silky smooth.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 45 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.8</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.8</span
+              >
             </div>
             <div class="treatment-price">₹2,800 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
 
           <!-- 9 -->
-          <div class="treatment-card" data-category="wellness" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="treatment-card"
+            data-category="wellness"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="treatment-icon">
               <i class="fas fa-wind"></i>
             </div>
             <span class="treatment-tag">Wellness</span>
             <h3>Sound Bath Therapy</h3>
-            <p>Tibetan singing bowls and crystal frequencies guide you into a deeply meditative state of cellular rest.</p>
+            <p>
+              Tibetan singing bowls and crystal frequencies guide you into a
+              deeply meditative state of cellular rest.
+            </p>
             <div class="treatment-meta">
               <span><i class="fas fa-clock"></i> 60 min</span>
-              <span><i class="fas fa-star" style="color:var(--accent-color);"></i> 4.9</span>
+              <span
+                ><i class="fas fa-star" style="color: var(--accent-color)"></i>
+                4.9</span
+              >
             </div>
             <div class="treatment-price">₹3,000 <span>/ session</span></div>
-            <button class="book-now-btn" style="width:100%; margin-top:0.5rem;">Book Now</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; margin-top: 0.5rem"
+            >
+              Book Now
+            </button>
           </div>
-
         </div>
       </div>
     </section>
@@ -839,22 +492,34 @@
           <div class="process-step" data-aos="fade-up" data-aos-delay="0">
             <div class="process-num">01</div>
             <h4>Arrival & Welcome</h4>
-            <p>Greeted with a warm herbal infusion and a personalised wellness consultation to tailor your experience.</p>
+            <p>
+              Greeted with a warm herbal infusion and a personalised wellness
+              consultation to tailor your experience.
+            </p>
           </div>
           <div class="process-step" data-aos="fade-up" data-aos-delay="120">
             <div class="process-num">02</div>
             <h4>Prepare & Refresh</h4>
-            <p>Settle into our private changing suites, steam room, and pre-treatment relaxation lounge.</p>
+            <p>
+              Settle into our private changing suites, steam room, and
+              pre-treatment relaxation lounge.
+            </p>
           </div>
           <div class="process-step" data-aos="fade-up" data-aos-delay="240">
             <div class="process-num">03</div>
             <h4>Your Treatment</h4>
-            <p>Your dedicated therapist guides you through a bespoke ritual in a serene private suite.</p>
+            <p>
+              Your dedicated therapist guides you through a bespoke ritual in a
+              serene private suite.
+            </p>
           </div>
           <div class="process-step" data-aos="fade-up" data-aos-delay="360">
             <div class="process-num">04</div>
             <h4>Rest & Restore</h4>
-            <p>Enjoy post-treatment tea, seasonal fruits, and unhurried time in our tranquil recuperation garden.</p>
+            <p>
+              Enjoy post-treatment tea, seasonal fruits, and unhurried time in
+              our tranquil recuperation garden.
+            </p>
           </div>
         </div>
       </div>
@@ -872,7 +537,6 @@
         </p>
 
         <div class="pricing-grid">
-
           <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
             <div class="plan-name">Starter</div>
             <h3>Refresh Ritual</h3>
@@ -884,23 +548,36 @@
               <li><i class="fas fa-check"></i> Steam room access</li>
               <li><i class="fas fa-check"></i> Herbal tea & fruit platter</li>
             </ul>
-            <button class="book-now-btn" style="width:100%;">Book Package</button>
+            <button class="book-now-btn" style="width: 100%">
+              Book Package
+            </button>
           </div>
 
-          <div class="pricing-card featured-price" data-aos="fade-up" data-aos-delay="150">
+          <div
+            class="pricing-card featured-price"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <div class="popular-badge">Popular</div>
             <div class="plan-name">Signature</div>
             <h3>Serenity Escape</h3>
             <div class="pricing-amount"><sup>₹</sup>10,499</div>
             <div class="pricing-duration">Half day · 3 treatments</div>
             <ul class="pricing-features">
-              <li><i class="fas fa-check"></i> 1 × 90-min Deep Tissue Therapy</li>
+              <li>
+                <i class="fas fa-check"></i> 1 × 90-min Deep Tissue Therapy
+              </li>
               <li><i class="fas fa-check"></i> 1 × Neem & Turmeric Wrap</li>
               <li><i class="fas fa-check"></i> 1 × 24K Gold Radiance Facial</li>
               <li><i class="fas fa-check"></i> Private suite + bath access</li>
               <li><i class="fas fa-check"></i> Full wellness consultation</li>
             </ul>
-            <button class="book-now-btn" style="width:100%; background:var(--accent-color);">Book Package</button>
+            <button
+              class="book-now-btn"
+              style="width: 100%; background: var(--accent-color)"
+            >
+              Book Package
+            </button>
           </div>
 
           <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
@@ -909,16 +586,19 @@
             <div class="pricing-amount"><sup>₹</sup>18,999</div>
             <div class="pricing-duration">Full day · 5 treatments</div>
             <ul class="pricing-features">
-              <li><i class="fas fa-check"></i> Himalayan Harmony Ritual (3hr)</li>
+              <li>
+                <i class="fas fa-check"></i> Himalayan Harmony Ritual (3hr)
+              </li>
               <li><i class="fas fa-check"></i> Aromatherapy Journey</li>
               <li><i class="fas fa-check"></i> Sound Bath Therapy</li>
               <li><i class="fas fa-check"></i> Coconut Milk Scrub</li>
               <li><i class="fas fa-check"></i> Gourmet plant-based lunch</li>
               <li><i class="fas fa-check"></i> Personalised take-home kit</li>
             </ul>
-            <button class="book-now-btn" style="width:100%;">Book Package</button>
+            <button class="book-now-btn" style="width: 100%">
+              Book Package
+            </button>
           </div>
-
         </div>
       </div>
     </section>
@@ -943,7 +623,9 @@
             </div>
           </div>
           <div class="addon-chip" data-aos="fade-up" data-aos-delay="60">
-            <div class="addon-chip-icon"><i class="fas fa-hand-sparkles"></i></div>
+            <div class="addon-chip-icon">
+              <i class="fas fa-hand-sparkles"></i>
+            </div>
             <div class="addon-chip-text">
               <h5>Paraffin Hand Wrap</h5>
               <p>+ ₹700 · 20 min</p>
@@ -957,14 +639,18 @@
             </div>
           </div>
           <div class="addon-chip" data-aos="fade-up" data-aos-delay="180">
-            <div class="addon-chip-icon"><i class="fas fa-feather-alt"></i></div>
+            <div class="addon-chip-icon">
+              <i class="fas fa-feather-alt"></i>
+            </div>
             <div class="addon-chip-text">
               <h5>Hot Stone Upgrade</h5>
               <p>+ ₹900 · included</p>
             </div>
           </div>
           <div class="addon-chip" data-aos="fade-up" data-aos-delay="240">
-            <div class="addon-chip-icon"><i class="fas fa-wine-glass-alt"></i></div>
+            <div class="addon-chip-icon">
+              <i class="fas fa-wine-glass-alt"></i>
+            </div>
             <div class="addon-chip-text">
               <h5>Champagne Toast</h5>
               <p>+ ₹1,200 · chilled</p>
@@ -992,7 +678,8 @@
           </p>
           <div class="cta-banner-btns">
             <button class="book-now-btn">
-              <i class="fas fa-calendar-alt" style="margin-right:8px;"></i>Reserve Your Treatment
+              <i class="fas fa-calendar-alt" style="margin-right: 8px"></i
+              >Reserve Your Treatment
             </button>
             <a href="contact.html" class="btn-ghost">
               <i class="fas fa-phone-alt"></i>Speak to Us
@@ -1007,8 +694,17 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3><i class="fas fa-spa" style="margin-right:8px;color:var(--accent-color)"></i>Serenity Spa</h3>
-            <p>A sanctuary of stillness in the heart of the city. We blend ancient healing traditions with contemporary luxury.</p>
+            <h3>
+              <i
+                class="fas fa-spa"
+                style="margin-right: 8px; color: var(--accent-color)"
+              ></i
+              >Serenity Spa
+            </h3>
+            <p>
+              A sanctuary of stillness in the heart of the city. We blend
+              ancient healing traditions with contemporary luxury.
+            </p>
             <div class="social-icons">
               <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1042,7 +738,10 @@
           <div class="footer-section">
             <h3>Visit Us</h3>
             <div class="contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> 14, MG Road, Indiranagar, Bengaluru – 560038</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 14, MG Road, Indiranagar,
+                Bengaluru – 560038
+              </p>
               <p><i class="fas fa-phone"></i> +91 80 4567 8901</p>
               <p><i class="fas fa-envelope"></i> hello@serenityspa.in</p>
               <p><i class="fas fa-clock"></i> Mon–Sun · 9 AM – 9 PM</p>
@@ -1051,87 +750,17 @@
         </div>
 
         <div class="footer-bottom">
-          <p>© 2025 Serenity Spa. All rights reserved. Crafted with <i class="fas fa-heart" style="color:var(--accent-color);"></i> in Bengaluru.</p>
+          <p>
+            © 2026 Serenity Spa. All rights reserved. Crafted with
+            <i class="fas fa-heart" style="color: var(--accent-color)"></i> in
+            Bengaluru.
+          </p>
         </div>
       </div>
     </footer>
 
     <!-- ═══════════════ SCRIPTS ═══════════════ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      // AOS
-      AOS.init({ duration: 900, once: true, offset: 80 });
-
-      // Navbar scroll
-      window.addEventListener("scroll", () => {
-        const navbar = document.getElementById("navbar");
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
-      });
-
-      // Hamburger
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-          hamburger.classList.remove("active");
-        });
-      });
-
-      // Filter bar
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const cards = document.querySelectorAll("#treatments-grid .treatment-card");
-
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const filter = btn.dataset.filter;
-
-          cards.forEach((card) => {
-            const match = filter === "all" || card.dataset.category === filter;
-            card.style.display = match ? "" : "none";
-          });
-        });
-      });
-
-      // Book now / tour buttons
-      document.querySelectorAll(".book-now-btn, .cta-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          alert("Booking system would open here. Thank you for your interest in Serenity Spa!");
-        });
-      });
-
-      // Loaded fade-in
-      window.addEventListener("load", () => {
-        document.body.classList.add("loaded");
-      });
-
-      // Ripple on buttons
-      document.querySelectorAll("button").forEach((button) => {
-        button.addEventListener("click", function (e) {
-          const ripple = document.createElement("span");
-          const rect = this.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          ripple.style.cssText = `
-            position:absolute; width:${size}px; height:${size}px;
-            left:${e.clientX - rect.left - size/2}px;
-            top:${e.clientY - rect.top - size/2}px;
-            background:rgba(255,255,255,0.3); border-radius:50%;
-            transform:scale(0); animation:ripple 0.6s linear; pointer-events:none;
-          `;
-          this.style.position = "relative";
-          this.style.overflow = "hidden";
-          this.appendChild(ripple);
-          setTimeout(() => ripple.remove(), 600);
-        });
-      });
-
-      // Process step hover already handled by CSS
-    </script>
+    <script src="./JS/treatments.js"></script>
   </body>
 </html>

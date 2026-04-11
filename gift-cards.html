@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Cards | Serenity Spa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css" />
+    <link rel="stylesheet" href="./CSS/gift-card.css">
+  </head>
+
+  <body>
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-spa"></i>
+          <span>Serenity Spa</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="book-now-btn" onclick="window.location='booking.html'">Book Now</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div class="page-hero-tag">
+          <i class="fas fa-gift"></i>
+          Give the Gift of Wellness
+        </div>
+        <h1>Serenity Gift Cards</h1>
+        <p>The perfect gift for someone you love — a moment of pure stillness, chosen by you, experienced at their own pace.</p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          Gift Cards
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ WHY GIFT CARDS ═══════════════ -->
+    <section class="inner-section alt-bg">
+      <div class="container">
+        <div class="section-label">Why Gift Cards</div>
+        <h2 class="section-heading">A Gift That Truly Restores</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext">Unlike things, the gift of an experience stays with someone forever. A Serenity gift card is an invitation to breathe.</p>
+
+        <div class="why-grid">
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon"><i class="fas fa-infinity"></i></div>
+            <h4>Never Expires</h4>
+            <p>Serenity gift cards are valid for 12 months from purchase — plenty of time to plan the perfect day of wellness.</p>
+          </div>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-icon"><i class="fas fa-spa"></i></div>
+            <h4>Any Treatment</h4>
+            <p>Redeemable against any treatment, package, or add-on in our full menu. The recipient chooses what they need most.</p>
+          </div>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-icon"><i class="fas fa-bolt"></i></div>
+            <h4>Instant Delivery</h4>
+            <p>Digital cards are delivered to your recipient's inbox within minutes. Physical cards dispatched within 2 business days.</p>
+          </div>
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon"><i class="fas fa-paint-brush"></i></div>
+            <h4>Beautifully Designed</h4>
+            <p>Choose from four elegant card themes. Every card arrives with a personalised message written in your own words.</p>
+          </div>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-icon"><i class="fas fa-layer-group"></i></div>
+            <h4>Combine Balances</h4>
+            <p>Recipients can use multiple gift cards in a single transaction or combine with any active loyalty rewards.</p>
+          </div>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-icon"><i class="fas fa-headset"></i></div>
+            <h4>Concierge Support</h4>
+            <p>Our team is available 7 days a week to help with bulk orders, corporate gifting, or any card queries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ GIFT CARD BUILDER ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="section-label">Customise</div>
+        <h2 class="section-heading">Build Your Gift Card</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext">Design a card that feels personal. Every detail — from the amount to the message — is yours to choose.</p>
+
+        <!-- Live card preview -->
+        <div class="card-preview-wrap" data-aos="fade-up">
+          <div class="gift-card-visual" id="gift-card" onclick="toggleCardFlip()">
+            <!-- Front -->
+            <div class="card-face card-front" id="card-front-face">
+              <div class="card-content">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                  <div class="card-logo"><i class="fas fa-spa"></i> Serenity Spa</div>
+                  <div class="card-gift-label">Gift Card</div>
+                </div>
+                <div>
+                  <div class="card-amount-display" id="card-amount-display">
+                    <span class="card-currency">₹</span><span id="card-amt-num">0</span>
+                  </div>
+                </div>
+                <div class="card-bottom">
+                  <div>
+                    <div class="card-accent-line"></div>
+                    <div class="card-recipient-name" id="card-recipient-name">For Someone Special</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div class="card-chip"></div>
+                    <div class="card-expiry">Valid 12 months</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Back -->
+            <div class="card-face card-back">
+              <div class="card-back-stripe"></div>
+              <div class="card-back-content">
+                <div class="card-code-display" id="card-code-back">SSG · •••• · •••• · ••••</div>
+                <div class="card-back-note">
+                  Present this code at booking or in-spa.<br/>
+                  Valid at Serenity Spa, Bengaluru · serenityspa.in
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tap to flip hint -->
+        <p style="text-align:center; font-size:0.78rem; color:var(--text-light); margin-top:-1rem; margin-bottom:1.5rem;">
+          <i class="fas fa-hand-pointer" style="color:var(--accent-color); margin-right:5px;"></i>Tap the card to flip it
+        </p>
+
+        <!-- Theme picker -->
+        <div style="text-align:center; margin-bottom:2.5rem;">
+          <div style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-light); margin-bottom:0.7rem;">Card Theme</div>
+          <div class="theme-picker">
+            <div class="theme-swatch swatch-forest active"  onclick="setTheme(this,'#1a3d16','#2d5a27','#3d7a30')" title="Forest"></div>
+            <div class="theme-swatch swatch-dusk"           onclick="setTheme(this,'#2c1810','#7a4030','#9a5040')" title="Dusk Rose"></div>
+            <div class="theme-swatch swatch-midnight"       onclick="setTheme(this,'#0d1f3c','#1e4080','#2a5aa8')" title="Midnight"></div>
+            <div class="theme-swatch swatch-sand"           onclick="setTheme(this,'#5c4a2a','#9c7a3a','#c4984a')" title="Warm Sand"></div>
+          </div>
+        </div>
+
+        <!-- Form + summary -->
+        <div class="gift-form-layout">
+          <!-- LEFT: Form -->
+          <div>
+
+            <!-- Amount -->
+            <div class="form-section-title">
+              <i class="fas fa-tag"></i> Choose an Amount
+            </div>
+            <div class="amount-grid" id="amount-grid">
+              <div class="amount-btn" onclick="selectAmount(this, 2000)">
+                <span class="amt-value">₹2,000</span>
+                <span class="amt-label">Starter</span>
+              </div>
+              <div class="amount-btn" onclick="selectAmount(this, 3500)">
+                <span class="amt-value">₹3,500</span>
+                <span class="amt-label">Popular</span>
+              </div>
+              <div class="amount-btn selected" onclick="selectAmount(this, 5000)">
+                <span class="amt-value">₹5,000</span>
+                <span class="amt-label">Best Value</span>
+              </div>
+              <div class="amount-btn" onclick="selectAmount(this, 8500)">
+                <span class="amt-value">₹8,500</span>
+                <span class="amt-label">Signature</span>
+              </div>
+              <div class="amount-btn" onclick="selectAmount(this, 12000)">
+                <span class="amt-value">₹12,000</span>
+                <span class="amt-label">Premium</span>
+              </div>
+              <div class="amount-btn" onclick="selectAmount(this, 18000)">
+                <span class="amt-value">₹18,000</span>
+                <span class="amt-label">Full Day</span>
+              </div>
+              <div class="amount-btn" onclick="selectAmount(this, 25000)">
+                <span class="amt-value">₹25,000</span>
+                <span class="amt-label">Luxury</span>
+              </div>
+              <div class="amount-btn custom-btn" id="custom-btn" onclick="toggleCustom()">
+                <i class="fas fa-pencil-alt"></i> Custom
+              </div>
+            </div>
+            <div class="custom-amount-row" id="custom-row">
+              <span>₹</span>
+              <input type="number" id="custom-input" placeholder="Enter amount" min="500" max="100000"
+                oninput="applyCustomAmount(this.value)" />
+            </div>
+
+            <!-- Occasion -->
+            <div class="form-section-title">
+              <i class="fas fa-star"></i> Occasion
+            </div>
+            <div class="occasion-chips" id="occasion-chips">
+              <div class="occasion-chip selected" onclick="selectOccasion(this,'Birthday')"><i class="fas fa-birthday-cake"></i> Birthday</div>
+              <div class="occasion-chip" onclick="selectOccasion(this,'Anniversary')"><i class="fas fa-heart"></i> Anniversary</div>
+              <div class="occasion-chip" onclick="selectOccasion(this,'Wedding')"><i class="fas fa-ring"></i> Wedding</div>
+              <div class="occasion-chip" onclick="selectOccasion(this,'Congratulations')"><i class="fas fa-trophy"></i> Congratulations</div>
+              <div class="occasion-chip" onclick="selectOccasion(this,'Mothers Day')"><i class="fas fa-female"></i> Mother's Day</div>
+              <div class="occasion-chip" onclick="selectOccasion(this,'Just Because')"><i class="fas fa-leaf"></i> Just Because</div>
+              <div class="occasion-chip" onclick="selectOccasion(this,'Corporate')"><i class="fas fa-briefcase"></i> Corporate</div>
+            </div>
+
+            <!-- Recipient details -->
+            <div class="form-section-title">
+              <i class="fas fa-user"></i> Recipient Details
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Recipient's Name <span style="color:#c0392b">*</span></label>
+                <input type="text" class="form-input" id="recipient-name" placeholder="e.g. Meera Nair"
+                  oninput="updateRecipient(this.value)" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Recipient's Email <span style="color:#c0392b">*</span></label>
+                <input type="email" class="form-input" id="recipient-email" placeholder="meera@example.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Personal Message <span style="color:var(--text-light); font-weight:400;">(optional · max 160 chars)</span></label>
+              <textarea class="form-textarea" id="personal-msg" maxlength="160"
+                placeholder="e.g. You deserve a day that's entirely yours — enjoy every moment of it. ✨"
+                style="min-height:90px; resize:none;"
+                oninput="countChars(this)"></textarea>
+              <div style="text-align:right; font-size:0.72rem; color:var(--text-light); margin-top:4px;">
+                <span id="char-count">0</span>/160
+              </div>
+            </div>
+
+            <!-- Delivery method -->
+            <div class="form-section-title">
+              <i class="fas fa-paper-plane"></i> Delivery Method
+            </div>
+            <div class="delivery-toggle" id="delivery-toggle">
+              <div class="delivery-option selected" onclick="selectDelivery(this,'Email (Instant)')" id="del-email">
+                <h5><i class="fas fa-envelope"></i> Digital — Email</h5>
+                <p>Sent to the recipient's inbox instantly. Includes a printable PDF version.</p>
+              </div>
+              <div class="delivery-option" onclick="selectDelivery(this,'Physical Post')" id="del-post">
+                <h5><i class="fas fa-box"></i> Physical Card</h5>
+                <p>Handcrafted card in a luxury envelope. Delivered within 2–4 business days. (+₹150)</p>
+              </div>
+            </div>
+
+            <!-- Sender details -->
+            <div class="form-section-title">
+              <i class="fas fa-heart"></i> Your Details
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name <span style="color:#c0392b">*</span></label>
+                <input type="text" class="form-input" id="sender-name" placeholder="e.g. Arjun" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Your Email <span style="color:#c0392b">*</span></label>
+                <input type="email" class="form-input" id="sender-email" placeholder="arjun@example.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Schedule Delivery <span style="color:var(--text-light); font-weight:400;">(optional — leave blank to send now)</span></label>
+              <input type="datetime-local" class="form-input" id="schedule-date" />
+            </div>
+
+            <div class="form-group" style="display:flex; gap:10px; align-items:flex-start; margin-top:0.5rem;">
+              <input type="checkbox" id="gift-consent" style="margin-top:4px; accent-color:var(--primary-color); width:16px; height:16px; flex-shrink:0;" />
+              <label for="gift-consent" style="font-size:0.85rem; color:var(--text-light); line-height:1.6; cursor:pointer;">
+                I agree to Serenity Spa's <a href="terms.html" style="color:var(--primary-color);">Terms &amp; Conditions</a> and understand that gift cards are non-refundable after purchase.
+              </label>
+            </div>
+
+          </div><!-- /form left -->
+
+          <!-- RIGHT: Summary sidebar -->
+          <div class="gift-summary" data-aos="fade-left">
+            <div class="gift-summary-header">
+              <h3>Your Gift Card</h3>
+              <p>Live preview — updates as you type</p>
+            </div>
+
+            <!-- Mini card preview -->
+            <div class="summary-card-mini">
+              <div class="scm-top">
+                <div class="scm-logo"><i class="fas fa-spa"></i> Serenity Spa</div>
+                <div class="scm-tag">Gift Card</div>
+              </div>
+              <div class="scm-amount" id="scm-amount"><sup>₹</sup><span id="scm-amt-num">5,000</span></div>
+              <div class="scm-bottom">
+                <div class="scm-recipient" id="scm-recipient">For Someone Special</div>
+                <div class="scm-valid">Valid 12 months</div>
+              </div>
+            </div>
+
+            <div class="summary-body">
+              <div class="summary-row">
+                <span class="s-label">Amount</span>
+                <span class="s-value" id="sum-amount">₹5,000</span>
+              </div>
+              <div class="summary-row">
+                <span class="s-label">Occasion</span>
+                <span class="s-value" id="sum-occasion">Birthday</span>
+              </div>
+              <div class="summary-row">
+                <span class="s-label">Recipient</span>
+                <span class="s-value empty" id="sum-recipient">Not entered</span>
+              </div>
+              <div class="summary-row">
+                <span class="s-label">Delivery</span>
+                <span class="s-value" id="sum-delivery">Email (Instant)</span>
+              </div>
+              <div class="summary-row">
+                <span class="s-label">Schedule</span>
+                <span class="s-value" id="sum-schedule">Send immediately</span>
+              </div>
+              <div class="summary-total-row">
+                <span>Total</span>
+                <span class="summary-total-price" id="sum-total">₹5,000</span>
+              </div>
+              <button class="book-now-btn" style="width:100%; margin-top:1rem; font-size:1rem; padding:14px;"
+                onclick="purchaseGiftCard()">
+                <i class="fas fa-gift" style="margin-right:8px;"></i>Purchase Gift Card
+              </button>
+            </div>
+            <div class="summary-note">
+              <i class="fas fa-shield-alt"></i>
+              Secure payment via Razorpay · UPI, Cards &amp; Net Banking accepted
+            </div>
+          </div>
+
+        </div><!-- /gift-form-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+    <section class="inner-section alt-bg">
+      <div class="container">
+        <div class="section-label">Simple Process</div>
+        <h2 class="section-heading">How It Works</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext">From purchase to pampering in four easy steps.</p>
+
+        <div class="how-grid">
+          <div class="how-step" data-aos="fade-up">
+            <div class="how-num">01</div>
+            <h4>Customise</h4>
+            <p>Choose an amount, pick an occasion, write a personal message, and select your card theme.</p>
+          </div>
+          <div class="how-step" data-aos="fade-up" data-aos-delay="120">
+            <div class="how-num">02</div>
+            <h4>Purchase</h4>
+            <p>Complete your secure payment via UPI, card, or net banking. Receive an order confirmation instantly.</p>
+          </div>
+          <div class="how-step" data-aos="fade-up" data-aos-delay="240">
+            <div class="how-num">03</div>
+            <h4>Gift Delivered</h4>
+            <p>Your recipient receives a beautifully designed digital card (or physical card in the post) with a unique code.</p>
+          </div>
+          <div class="how-step" data-aos="fade-up" data-aos-delay="360">
+            <div class="how-num">04</div>
+            <h4>Enjoy Serenity</h4>
+            <p>They book their treatment of choice, present the code at arrival, and let us take care of the rest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ REDEEM SECTION ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="redeem-layout">
+          <div class="redeem-image" data-aos="fade-right">
+            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80" alt="Redeem your gift card" />
+          </div>
+          <div class="redeem-content" data-aos="fade-left">
+            <div class="section-label" style="text-align:left;">Redemption</div>
+            <h2>How to Redeem Your Gift Card</h2>
+            <p>Redeeming couldn't be simpler. Your recipient has three ways to use their gift card balance:</p>
+
+            <div class="redeem-steps">
+              <div class="redeem-step-row">
+                <div class="redeem-step-num">1</div>
+                <span><strong style="color:var(--primary-color);">Online booking</strong> — Enter the gift card code in the payment field on our booking page. The balance is applied instantly.</span>
+              </div>
+              <div class="redeem-step-row">
+                <div class="redeem-step-num">2</div>
+                <span><strong style="color:var(--primary-color);">By phone</strong> — Call us on +91 80 4567 8901 and quote the code. Our team will apply the balance to the booking.</span>
+              </div>
+              <div class="redeem-step-row">
+                <div class="redeem-step-num">3</div>
+                <span><strong style="color:var(--primary-color);">In-spa</strong> — Simply show the digital card or present the physical card at reception on the day of your visit.</span>
+              </div>
+            </div>
+
+            <div style="background:rgba(212,175,55,0.08); border:1px solid rgba(212,175,55,0.25); border-radius:var(--border-radius); padding:1rem 1.2rem; font-size:0.85rem; color:var(--text-light); line-height:1.7; margin-bottom:1.8rem;">
+              <i class="fas fa-info-circle" style="color:var(--accent-color); margin-right:6px;"></i>
+              Gift card balances can be used across multiple visits and combined with other gift cards. Remaining balances are automatically stored for future use. Cards are valid for <strong>12 months</strong> from the purchase date and are non-refundable.
+            </div>
+
+            <a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:13px 28px;">
+              <i class="fas fa-calendar-check"></i> Book a Treatment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="inner-section alt-bg">
+      <div class="container">
+        <div class="section-label">Questions</div>
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext">Everything you need to know about Serenity gift cards.</p>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              How long are gift cards valid for?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              All Serenity gift cards are valid for 12 months from the date of purchase. The expiry date is clearly displayed on the card. We do not offer extensions, so please remind your recipient to book well in advance of the expiry date.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Can the recipient use the card across multiple visits?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              Absolutely. The balance on a gift card does not need to be used in a single visit. Any remaining amount is automatically stored against the card code and can be used on a future booking within the validity period.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Can I use multiple gift cards in one booking?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              Yes — recipients can combine up to 3 gift card codes in a single transaction. Simply enter each code at checkout or inform our team when booking by phone or in-spa.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Are gift cards refundable?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              Gift cards are non-refundable once purchased. However, if you have made an error (e.g., wrong recipient email), please contact us within 30 minutes of purchase at hello@serenityspa.in and we will do our best to correct it before the card is delivered.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Do you offer corporate or bulk gift card orders?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              Yes — we provide special rates and bespoke branding for corporate orders of 10 or more cards. Please contact us at hello@serenityspa.in or call +91 80 4567 8901 to speak with our corporate gifting team.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              What if the treatment costs more than the gift card value?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              No problem — the recipient can simply pay the difference by cash, UPI, or card at the time of their visit. Alternatively, they can choose a treatment that falls within the gift card value, with any remaining balance retained for a future booking.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              How long does physical card delivery take?
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-answer">
+              Physical cards are handcrafted and dispatched within 2 business days via tracked courier (Blue Dart). Delivery typically takes 3–5 business days within Karnataka and 5–7 business days to other Indian states. A tracking number is sent to your email once dispatched.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="cta-banner" data-aos="fade-up">
+          <h2>Need Help? We're Here.</h2>
+          <p>Our team is available seven days a week to assist with gift card orders, corporate gifting, or any questions.</p>
+          <div class="cta-btns">
+            <button class="book-now-btn" style="padding:14px 32px; font-size:1rem; background:var(--accent-color);"
+              onclick="window.scrollTo({top:0,behavior:'smooth'})">
+              <i class="fas fa-gift" style="margin-right:8px;"></i>Buy a Gift Card
+            </button>
+            <a href="contact.html" class="btn-ghost"><i class="fas fa-headset"></i> Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PURCHASE CONFIRMATION MODAL ═══════════════ -->
+    <div class="purchase-overlay" id="purchase-overlay" onclick="closeModalOutside(event)">
+      <div class="purchase-modal">
+        <div class="modal-gift-card">
+          <div class="modal-card-content">
+            <i class="fas fa-gift"></i>
+            <div class="modal-amount" id="modal-amount-display">₹5,000</div>
+          </div>
+        </div>
+        <div class="modal-body-content">
+          <h3>Gift Card Sent! 🎉</h3>
+          <p>Your Serenity gift card has been created and will be delivered to <strong id="modal-recipient-name">your recipient</strong> shortly. A confirmation has been sent to your email.</p>
+          <div class="voucher-code-box">
+            <span class="code-label">Gift Card Code</span>
+            <div class="code-value" id="modal-code">SSG-••••-••••</div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn-outline-green" onclick="closeModal()">
+              <i class="fas fa-check"></i> Done
+            </button>
+            <button class="btn-outline-green" onclick="printCard()">
+              <i class="fas fa-print"></i> Print Card
+            </button>
+            <a href="index.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:7px; padding:11px 20px; font-size:0.88rem;">
+              <i class="fas fa-home"></i> Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Serenity Spa</h3>
+            <p>Your premier destination for relaxation and wellness. We combine ancient healing traditions with modern luxury to create transformative experiences.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="treatments.html">Treatments</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="treatments.html">Massage Therapy</a></li>
+              <li><a href="treatments.html">Facial Treatments</a></li>
+              <li><a href="treatments.html">Body Treatments</a></li>
+              <li><a href="gift-cards.html">Gift Cards</a></li>
+              <li><a href="booking.html">Book Online</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> 14, MG Road, Indiranagar, Bengaluru – 560038</p>
+              <p><i class="fas fa-phone"></i> +91 80 4567 8901</p>
+              <p><i class="fas fa-envelope"></i> hello@serenityspa.in</p>
+              <p><i class="fas fa-clock"></i> Mon–Sun: 9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Serenity Spa. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./JS/gift-card.js"></script>
+  </body>
+</html>
