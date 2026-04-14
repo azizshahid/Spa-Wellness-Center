@@ -3,76 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serenity Spa - Ultimate Relaxation Experience</title>
+    <title>Serenity Spa — Bengaluru's Premier Wellness Sanctuary</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="./CSS/styles.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css" />
   </head>
+
   <body>
-    <!-- Navigation Bar -->
+
+    <!-- ═══════════════════════════════
+         NAVBAR
+    ═══════════════════════════════════ -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
-        <div class="nav-logo">
+        <a href="index.html" class="nav-logo">
           <i class="fas fa-spa"></i>
           <span>Serenity Spa</span>
-        </div>
+        </a>
+
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#treatments" class="nav-link">Treatments</a></li>
-          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#home"       class="nav-link">Home</a></li>
+          <li><a href="#about"      class="nav-link">About</a></li>
+          <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li><a href="blog.html"   class="nav-link">Blog</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <button class="book-now-btn">Book Now</button>
+
+        <button class="book-now-btn" onclick="window.location='booking.html'">Book Now</button>
+
         <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+
+    <!-- ═══════════════════════════════
+         HERO
+    ═══════════════════════════════════ -->
     <section class="hero" id="home">
       <div class="hero-container">
+
+        <!-- Image -->
         <div class="hero-image" data-aos="fade-right" data-aos-duration="1000">
           <img
             src="./assets/images/hero-image/Spa hero Image.jpg"
             alt="Serene Spa Experience"
           />
         </div>
-        <div
-          class="hero-content"
-          data-aos="fade-left"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
-          <h1>Discover Your Inner Peace</h1>
+
+        <!-- Content -->
+        <div class="hero-content" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
+          <h1>Discover Your<br /><em>Inner Peace</em></h1>
           <p>
-            Escape the everyday stress and immerse yourself in our tranquil
-            sanctuary. Experience world-class treatments designed to rejuvenate
-            your body, mind, and soul.
+            Escape the everyday and immerse yourself in our tranquil sanctuary.
+            World-class treatments designed to rejuvenate your body, mind, and soul —
+            rooted in ancient wisdom, delivered with modern luxury.
           </p>
-          <button class="cta-btn">Explore Treatments</button>
+
+          <div class="hero-btns">
+            <button class="cta-btn" onclick="window.location='treatments.html'">
+              <i class="fas fa-spa" style="margin-right:8px;"></i>Explore Treatments
+            </button>
+            <button class="book-now-btn" onclick="window.location='booking.html'" style="background:transparent; color:var(--primary-color); border:2px solid var(--primary-color);">
+              Book a Session
+            </button>
+          </div>
+
+          <!-- Trust strip -->
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <strong>13+</strong>
+              <span>Expert Therapists</span>
+            </div>
+            <div class="hero-trust-sep"></div>
+            <div class="hero-trust-item">
+              <strong>32</strong>
+              <span>Signature Treatments</span>
+            </div>
+            <div class="hero-trust-sep"></div>
+            <div class="hero-trust-item">
+              <strong>5★</strong>
+              <span>Google Rating</span>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Signature Treatments -->
+
+    <!-- ═══════════════════════════════
+         SIGNATURE TREATMENTS
+    ═══════════════════════════════════ -->
     <section class="treatments" id="treatments">
       <div class="container">
-        <h2 data-aos="fade-up">Signature Treatment Highlights</h2>
+
+        <p class="section-eyebrow" data-aos="fade-up">What We Offer</p>
+        <h2 data-aos="fade-up" data-aos-delay="60">Signature Treatment Highlights</h2>
+        <p class="section-subtext" data-aos="fade-up" data-aos-delay="100">
+          Each therapy is carefully crafted with premium botanicals and time-honoured
+          techniques — tailored to what your body needs most.
+        </p>
+
         <div class="treatments-grid">
           <div class="treatment-card" data-aos="fade-up" data-aos-delay="100">
             <div class="treatment-icon">
@@ -80,319 +125,584 @@
             </div>
             <h3>Aromatherapy Massage</h3>
             <p>
-              Indulge in our signature aromatherapy massage using premium
-              essential oils to restore balance and harmony.
+              Indulge in our signature aromatherapy massage using premium cold-pressed
+              essential oils to restore balance, ease tension, and awaken the senses.
             </p>
           </div>
+
           <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
             <div class="treatment-icon">
               <i class="fas fa-gem"></i>
             </div>
             <h3>Diamond Facial</h3>
             <p>
-              Experience luxury with our diamond-infused facial treatment that
-              leaves your skin radiant and youthful.
+              Experience luxury with our diamond-infused microdermabrasion facial —
+              leaving your skin visibly radiant, lifted, and youthful.
             </p>
           </div>
+
           <div class="treatment-card" data-aos="fade-up" data-aos-delay="300">
             <div class="treatment-icon">
               <i class="fas fa-water"></i>
             </div>
             <h3>Hydrotherapy</h3>
             <p>
-              Rejuvenate your body with our therapeutic water treatments
-              designed to improve circulation and wellness.
+              Rejuvenate from the inside out with our therapeutic water treatments,
+              designed to improve circulation, detoxify, and promote deep recovery.
             </p>
           </div>
         </div>
+
+        <!-- CTA below grid -->
+        <div style="text-align:center; margin-top:3rem;" data-aos="fade-up">
+          <a href="treatments.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:13px 30px;">
+            View All 32 Treatments <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <!-- Relaxation Journey -->
+
+    <!-- ═══════════════════════════════
+         RELAXATION JOURNEY
+    ═══════════════════════════════════ -->
     <section class="journey" id="about">
       <div class="container">
-        <h2 data-aos="fade-up">Our Relaxation Journey</h2>
+
+        <p class="section-eyebrow" data-aos="fade-up">Your Experience</p>
+        <h2 data-aos="fade-up" data-aos-delay="60">Our Relaxation Journey</h2>
+        <p class="section-subtext" data-aos="fade-up" data-aos-delay="100">
+          From the moment you arrive to long after you leave, every detail is
+          considered to help you feel completely restored.
+        </p>
+
         <div class="journey-steps">
+          <div class="step-connector"></div>
+
           <div class="step" data-aos="fade-up" data-aos-delay="100">
             <div class="step-number">1</div>
-            <h3>Welcome & Consultation</h3>
-            <p>
-              Begin with a personalized consultation to understand your wellness
-              goals
-            </p>
+            <h3>Welcome &amp; Consultation</h3>
+            <p>A warm herbal welcome and a personalised wellness consultation to understand exactly what your body needs today.</p>
           </div>
-          <div class="step-connector"></div>
+
           <div class="step" data-aos="fade-up" data-aos-delay="200">
             <div class="step-number">2</div>
             <h3>Preparation Ritual</h3>
-            <p>
-              Enjoy our signature preparation ritual in our tranquil relaxation
-              lounge
-            </p>
+            <p>Settle into our tranquil relaxation lounge — steam room, aromatherapy, and stillness to prepare your mind and body.</p>
           </div>
-          <div class="step-connector"></div>
+
           <div class="step" data-aos="fade-up" data-aos-delay="300">
             <div class="step-number">3</div>
             <h3>Treatment Experience</h3>
-            <p>
-              Immerse yourself in your chosen treatment with our expert
-              therapists
-            </p>
+            <p>Immerse yourself in your chosen therapy delivered by our expert therapists in a serene, private suite.</p>
           </div>
-          <div class="step-connector"></div>
+
           <div class="step" data-aos="fade-up" data-aos-delay="400">
             <div class="step-number">4</div>
-            <h3>Aftercare & Reflection</h3>
-            <p>
-              Complete your journey with personalized aftercare recommendations
-            </p>
+            <h3>Aftercare &amp; Reflection</h3>
+            <p>Seasonal fruits, herbal tea, and personalised aftercare guidance to carry the feeling home with you.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════ -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="testimonials-content">
+
+          <!-- Image -->
+          <div class="testimonials-image" data-aos="fade-right">
+            <img src="./assets/images/Testimonials/Emma.png" alt="Happy Client" />
+          </div>
+
+          <!-- Cards -->
+          <div class="testimonials-cards" data-aos="fade-left">
+            <p class="section-eyebrow" style="text-align:left;">What Our Clients Say</p>
+            <h2>Client Experiences</h2>
+
+            <div class="testimonial-carousel" id="testimonial-carousel">
+
+              <div class="testimonial-card active">
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"The most relaxing experience I've ever had. The aromatherapy massage was absolutely divine — I left feeling like a completely different person."</p>
+                <div class="client-info">
+                  <img src="https://i.pravatar.cc/100?img=47" alt="Sarah Johnson" />
+                  <div>
+                    <h4>Sarah Johnson</h4>
+                    <span>Regular Client · Bengaluru</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Professional staff, luxurious facilities, and treatments that truly transform. The Himalayan Harmony Ritual changed how I think about self-care."</p>
+                <div class="client-info">
+                  <img src="https://i.pravatar.cc/100?img=12" alt="Michael Chen" />
+                  <div>
+                    <h4>Michael Chen</h4>
+                    <span>VIP Member · Indiranagar</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"A true sanctuary of peace in the city. Every single visit leaves me feeling renewed, refreshed, and genuinely restored. I can't recommend it enough."</p>
+                <div class="client-info">
+                  <img src="https://i.pravatar.cc/100?img=56" alt="Emma Davis" />
+                  <div>
+                    <h4>Emma Davis</h4>
+                    <span>Wellness Enthusiast · Whitefield</span>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /testimonial-carousel -->
+
+            <div class="testimonial-nav" id="testimonial-nav">
+              <button class="nav-dot active" data-slide="0"></button>
+              <button class="nav-dot"        data-slide="1"></button>
+              <button class="nav-dot"        data-slide="2"></button>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" data-aos="fade-up">
-  <div class="container">
-    <div class="testimonials-content">
-      <div class="testimonials-image" data-aos="fade-right">
-        <img src="./assets/images/Testimonials/Emma.png" alt="Happy Client" />
-      </div>
-      <div class="testimonials-cards" data-aos="fade-left">
-        <h2>Client Experiences</h2>
-        <div class="testimonial-carousel">
-          <div class="testimonial-card active">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>
-              "The most relaxing experience I've ever had. The aromatherapy massage was absolutely divine!"
-            </p>
-            <div class="client-info">
-              <img src="/placeholder.svg?height=50&width=50&text=SJ" alt="Sarah Johnson" />
-              <div>
-                <h4>Sarah Johnson</h4>
-                <span>Regular Client</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card" data-aos="fade-in">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>
-              "Professional staff, luxurious facilities, and treatments that truly transform. Highly recommended!"
-            </p>
-            <div class="client-info">
-              <img src="/placeholder.svg?height=50&width=50&text=MC" alt="Michael Chen" />
-              <div>
-                <h4>Michael Chen</h4>
-                <span>VIP Member</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card" data-aos="fade-in">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>
-              "A sanctuary of peace in the city. Every visit leaves me feeling renewed and refreshed."
-            </p>
-            <div class="client-info">
-              <img src="/placeholder.svg?height=50&width=50&text=ED" alt="Emma Davis" />
-              <div>
-                <h4>Emma Davis</h4>
-                <span>Wellness Enthusiast</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-nav">
-          <button class="nav-dot active" data-slide="0"></button>
-          <button class="nav-dot" data-slide="1"></button>
-          <button class="nav-dot" data-slide="2"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-    <!-- Virtual Gallery -->
+    <!-- ═══════════════════════════════
+         VIRTUAL GALLERY
+    ═══════════════════════════════════ -->
     <section class="gallery">
       <div class="container">
-        <h2 data-aos="fade-up">Explore Spa Virtually</h2>
+
+        <p class="section-eyebrow" data-aos="fade-up">Explore</p>
+        <h2 data-aos="fade-up" data-aos-delay="60">Explore Serenity Virtually</h2>
+        <p class="section-subtext" data-aos="fade-up" data-aos-delay="100">
+          Step inside our spaces before you visit. Every room is designed around a
+          single idea: complete, uninterrupted stillness.
+        </p>
+
         <div class="gallery-grid">
+
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-            <img
-              src="./assets/images/virtual-tour/treatement-rooms.png"
-              alt="Treatment Room"
-            />
+            <img src="./assets/images/virtual-tour/treatement-rooms.png" alt="Treatment Room" />
             <div class="gallery-content">
               <h3>Treatment Rooms</h3>
               <p>
-                Step into our serene treatment rooms designed for ultimate
-                relaxation and privacy.
+                Our four private suites are designed around different botanical themes —
+                warm lighting, curated scent, and complete acoustic privacy.
               </p>
-              <button class="tour-btn">Take a Virtual Tour</button>
+              <button class="tour-btn" onclick="alert('Virtual tour of Treatment Rooms would launch here.')">
+                <i class="fas fa-vr-cardboard"></i> Take a Virtual Tour
+              </button>
             </div>
           </div>
-          <div
-            class="gallery-item reverse"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <img
-              src="./assets/images/virtual-tour/relaxation-room.png"
-              alt="Relaxation Lounge"
-            />
+
+          <div class="gallery-item reverse" data-aos="fade-up" data-aos-delay="200">
+            <img src="./assets/images/virtual-tour/relaxation-room.png" alt="Relaxation Lounge" />
             <div class="gallery-content">
               <h3>Relaxation Lounge</h3>
               <p>
-                Unwind in our peaceful lounge area before and after your
-                treatments.
+                Unwind before and after your treatment in our lounge — herbal teas,
+                seasonal fruits, soft music, and unhurried time to simply breathe.
               </p>
-              <button class="tour-btn">Take a Virtual Tour</button>
+              <button class="tour-btn" onclick="alert('Virtual tour of Relaxation Lounge would launch here.')">
+                <i class="fas fa-vr-cardboard"></i> Take a Virtual Tour
+              </button>
             </div>
           </div>
+
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-            <img
-              src="./assets/images/virtual-tour/hydrotherapy-area.png"
-              alt="Hydrotherapy Area"
-            />
+            <img src="./assets/images/virtual-tour/hydrotherapy-area.png" alt="Hydrotherapy Area" />
             <div class="gallery-content">
               <h3>Hydrotherapy Area</h3>
               <p>
                 Experience the healing power of water in our state-of-the-art
-                hydrotherapy facilities.
+                hydrotherapy facilities — mineral pools, jet therapy, and contrast baths.
               </p>
-              <button class="tour-btn">Take a Virtual Tour</button>
+              <button class="tour-btn" onclick="alert('Virtual tour of Hydrotherapy Area would launch here.')">
+                <i class="fas fa-vr-cardboard"></i> Take a Virtual Tour
+              </button>
             </div>
           </div>
+
         </div>
+
+        <!-- Link to full gallery -->
+        <div style="text-align:center; margin-top:3rem;" data-aos="fade-up">
+          <a href="gallery.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:13px 30px; background:transparent; color:var(--primary-color); border:2px solid var(--primary-color);">
+            <i class="fas fa-images"></i> View Full Gallery
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <!-- Statistics -->
+
+    <!-- ═══════════════════════════════
+         STATISTICS
+    ═══════════════════════════════════ -->
     <section class="stats">
       <div class="container">
         <div class="stats-grid">
+
           <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="stat-number">13+</div>
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-number" data-target="13">13+</div>
             <div class="stat-label">Expert Therapists</div>
           </div>
+
           <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-icon">
-              <i class="fas fa-spa"></i>
-            </div>
-            <div class="stat-number">32</div>
+            <div class="stat-icon"><i class="fas fa-spa"></i></div>
+            <div class="stat-number" data-target="32">32</div>
             <div class="stat-label">Signature Services</div>
           </div>
+
           <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-icon">
-              <i class="fas fa-door-open"></i>
-            </div>
-            <div class="stat-number">4</div>
+            <div class="stat-icon"><i class="fas fa-door-open"></i></div>
+            <div class="stat-number" data-target="4">4</div>
             <div class="stat-label">Luxury Treatment Rooms</div>
           </div>
+
           <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="stat-icon">
-              <i class="fas fa-award"></i>
-            </div>
-            <div class="stat-number">2</div>
+            <div class="stat-icon"><i class="fas fa-award"></i></div>
+            <div class="stat-number" data-target="2">2</div>
             <div class="stat-label">Industry Awards</div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Newsletter -->
+
+    <!-- ═══════════════════════════════
+         NEWSLETTER
+    ═══════════════════════════════════ -->
     <section class="newsletter">
       <div class="container">
         <div class="newsletter-content" data-aos="fade-up">
           <h2>Stay Connected with Serenity</h2>
           <p>
-            Subscribe to receive exclusive offers, wellness tips, and updates
-            about our latest treatments.
+            Join 3,200+ subscribers receiving exclusive offers, seasonal rituals,
+            and wellness wisdom every Sunday morning.
           </p>
           <form class="newsletter-form" id="newsletter-form">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              required
-            />
+            <input type="email" placeholder="Your email address" required />
             <button type="submit">Subscribe</button>
           </form>
+          <p class="newsletter-privacy">
+            No spam, ever. Unsubscribe anytime. Read our
+            <a href="privacy-policy.html">Privacy Policy</a>.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+
+    <!-- ═══════════════════════════════
+         FOOTER
+    ═══════════════════════════════════ -->
     <footer class="footer" id="contact">
       <div class="container">
         <div class="footer-content">
+
+          <!-- Brand -->
           <div class="footer-section">
-            <h3>About Serenity Spa</h3>
-            <p>
-              Your premier destination for relaxation and wellness. We combine
-              ancient healing traditions with modern luxury to create
-              transformative experiences.
-            </p>
+            <div class="footer-logo"><i class="fas fa-spa"></i> Serenity Spa</div>
+            <p>Your premier destination for relaxation and wellness. We blend ancient healing traditions with modern luxury to create truly transformative experiences.</p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
+
+          <!-- Quick Links -->
           <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#treatments">Treatments</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="treatments.html">Treatments</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
+
+          <!-- Services -->
           <div class="footer-section">
             <h3>Services</h3>
             <ul>
-              <li><a href="#">Massage Therapy</a></li>
-              <li><a href="#">Facial Treatments</a></li>
-              <li><a href="#">Body Treatments</a></li>
-              <li><a href="#">Hydrotherapy</a></li>
-              <li><a href="#">Wellness Packages</a></li>
+              <li><a href="treatments.html">Massage Therapy</a></li>
+              <li><a href="treatments.html">Facial Treatments</a></li>
+              <li><a href="treatments.html">Body Rituals</a></li>
+              <li><a href="treatments.html">Hydrotherapy</a></li>
+              <li><a href="treatments.html">Wellness Packages</a></li>
+              <li><a href="gift-cards.html">Gift Cards</a></li>
+              <li><a href="booking.html">Book Online</a></li>
             </ul>
           </div>
+
+          <!-- Contact -->
           <div class="footer-section">
-            <h3>Contact Info</h3>
+            <h3>Visit Us</h3>
             <div class="contact-info">
-              <p>
-                <i class="fas fa-map-marker-alt"></i> 123 Wellness Street,
-                Serenity City, SC 12345
-              </p>
-              <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-              <p><i class="fas fa-envelope"></i> info@serenityspa.com</p>
-              <p><i class="fas fa-clock"></i> Mon-Sun: 9:00 AM - 9:00 PM</p>
+              <p><i class="fas fa-map-marker-alt"></i>14, MG Road, Indiranagar, Bengaluru – 560038</p>
+              <p><i class="fas fa-phone"></i>+91 80 4567 8901</p>
+              <p><i class="fas fa-envelope"></i>hello@serenityspa.in</p>
+              <p><i class="fas fa-clock"></i>Mon–Sun · 9:00 AM – 9:00 PM</p>
             </div>
           </div>
+
         </div>
+
         <div class="footer-bottom">
           <p>
-            &copy; 2024 Serenity Spa. All rights reserved. | Privacy Policy |
-            Terms of Service
+            &copy; 2025 Serenity Spa. All rights reserved. &nbsp;|&nbsp;
+            <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;|&nbsp;
+            Crafted with <i class="fas fa-heart" style="color:var(--accent-color);"></i> in Bengaluru
           </p>
         </div>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="./JS/Index.js"></script>
+
+    <!-- ═══════════════════════════════
+         SCRIPTS
+    ═══════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      /* ── AOS init ── */
+      AOS.init({ duration: 950, once: true, offset: 90, easing: "ease-out-cubic" });
+
+      /* ── Page load fade-in ── */
+      window.addEventListener("load", () => document.body.classList.add("loaded"));
+
+      /* ── Navbar scroll effect ── */
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 60);
+      });
+
+      /* ── Hamburger ── */
+      const hamburger = document.getElementById("hamburger");
+      const navMenu   = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // close on link click
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+      // close on outside click
+      document.addEventListener("click", e => {
+        if (!navbar.contains(e.target)) {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+
+      /* ── Smooth scrolling for anchor links ── */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      /* ── Testimonial carousel ── */
+      (function() {
+        const slides   = document.querySelectorAll(".testimonial-card");
+        const dots     = document.querySelectorAll(".nav-dot");
+        let current    = 0;
+        let autoTimer  = null;
+
+        function showSlide(idx) {
+          slides.forEach(s => s.classList.remove("active"));
+          dots.forEach(d => d.classList.remove("active"));
+          slides[idx].classList.add("active");
+          dots[idx].classList.add("active");
+          current = idx;
+        }
+
+        function next() {
+          showSlide((current + 1) % slides.length);
+        }
+
+        function startAuto() { autoTimer = setInterval(next, 5000); }
+        function stopAuto()  { clearInterval(autoTimer); }
+
+        dots.forEach((dot, i) => {
+          dot.addEventListener("click", () => { showSlide(i); stopAuto(); startAuto(); });
+        });
+
+        const carousel = document.getElementById("testimonial-carousel");
+        if (carousel) {
+          carousel.addEventListener("mouseenter", stopAuto);
+          carousel.addEventListener("mouseleave", startAuto);
+        }
+
+        startAuto();
+      })();
+
+      /* ── Counter animation (stats section) ── */
+      function animateCounter(el) {
+        const raw     = el.textContent.replace(/[^0-9]/g, "");
+        const target  = parseInt(raw, 10);
+        const hasPlus = el.dataset.target && parseInt(el.dataset.target) !== target
+                        || el.textContent.includes("+");
+        const duration = 1600;
+        const step     = 16;
+        const steps    = duration / step;
+        const increment = target / steps;
+        let val = 0;
+
+        const timer = setInterval(() => {
+          val += increment;
+          if (val >= target) {
+            el.textContent = target + (hasPlus ? "+" : "");
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.ceil(val) + (hasPlus ? "+" : "");
+          }
+        }, step);
+      }
+
+      const statsSection = document.querySelector(".stats");
+      if (statsSection) {
+        const observer = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+            document.querySelectorAll(".stat-number").forEach(animateCounter);
+            observer.disconnect();
+          }
+        }, { threshold: 0.4 });
+        observer.observe(statsSection);
+      }
+
+      /* ── Newsletter submission ── */
+      document.getElementById("newsletter-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = this.querySelector("button");
+        const orig = btn.textContent;
+        btn.textContent = "Subscribing…";
+        btn.disabled = true;
+
+        setTimeout(() => {
+          btn.textContent = "✓ Subscribed!";
+          setTimeout(() => {
+            btn.textContent = orig;
+            btn.disabled = false;
+            this.reset();
+          }, 2500);
+        }, 1000);
+      });
+
+      /* ── Virtual tour buttons ── */
+      document.querySelectorAll(".tour-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+          const room = this.closest(".gallery-item")?.querySelector("h3")?.textContent || "this space";
+          alert(`A 360° virtual tour of "${room}" would launch here.`);
+        });
+      });
+
+      /* ── Parallax: hero image ── */
+      const heroImg = document.querySelector(".hero-image img");
+      if (heroImg) {
+        window.addEventListener("scroll", () => {
+          const rate = window.pageYOffset * -0.18;
+          heroImg.style.transform = `translateY(${rate}px)`;
+        }, { passive: true });
+      }
+
+      /* ── Treatment card hover lift (override JS added by old Index.js) ── */
+      document.querySelectorAll(".treatment-card").forEach(card => {
+        card.addEventListener("mouseenter", function() {
+          this.style.transform = "translateY(-12px)";
+        });
+        card.addEventListener("mouseleave", function() {
+          this.style.transform = "";
+        });
+      });
+
+      /* ── Button ripple effect ── */
+      document.querySelectorAll("button, .cta-btn, .book-now-btn, .tour-btn").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+          const rect   = this.getBoundingClientRect();
+          const size   = Math.max(rect.width, rect.height);
+          const ripple = document.createElement("span");
+          ripple.style.cssText = [
+            `position:absolute`,
+            `width:${size}px`,
+            `height:${size}px`,
+            `left:${e.clientX - rect.left - size / 2}px`,
+            `top:${e.clientY - rect.top - size / 2}px`,
+            `background:rgba(255,255,255,0.28)`,
+            `border-radius:50%`,
+            `transform:scale(0)`,
+            `animation:ripple 0.65s linear`,
+            `pointer-events:none`
+          ].join(";");
+          this.style.position = "relative";
+          this.style.overflow = "hidden";
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 700);
+        });
+      });
+
+      /* ── Reveal animation for cards on scroll ── */
+      const revealEls = document.querySelectorAll(".treatment-card, .gallery-item, .step");
+      const revealObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = entry.target.style.transform.replace("translateY(24px)", "") || "";
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealEls.forEach(el => {
+        if (!el.style.opacity) {
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        }
+        revealObs.observe(el);
+      });
+
+      /* ── Floating animation on treatment icons ── */
+      document.querySelectorAll(".treatment-icon").forEach((icon, i) => {
+        icon.style.animation = `float 3.5s ease-in-out infinite ${i * 0.6}s`;
+      });
+    </script>
   </body>
 </html>
