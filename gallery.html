@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Serenity Spa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css" />
+    <link rel="stylesheet" href="./CSS/gallery.css">
+  </head>
+
+  <body>
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-spa"></i>
+          <span>Serenity Spa</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="book-now-btn" onclick="window.location='booking.html'">Book Now</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div class="page-hero-tag">
+          <i class="fas fa-images"></i>
+          Inside Serenity
+        </div>
+        <h1>Our Gallery</h1>
+        <p>Step inside our sanctuary. Browse treatment rooms, relaxation spaces, and the moments of stillness that define the Serenity experience.</p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          Gallery
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PHOTO GALLERY ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="section-label">Browse</div>
+        <h2 class="section-heading">Photo Gallery</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext">Filter by space or experience. Click any image to open the full-screen viewer.</p>
+
+        <!-- Filter -->
+        <div class="gallery-filter-bar" id="gallery-filter">
+          <button class="filter-btn active" onclick="filterGallery(this,'all')">All</button>
+          <button class="filter-btn" onclick="filterGallery(this,'treatment')">Treatment Rooms</button>
+          <button class="filter-btn" onclick="filterGallery(this,'lounge')">Relaxation Lounge</button>
+          <button class="filter-btn" onclick="filterGallery(this,'therapy')">Therapy</button>
+          <button class="filter-btn" onclick="filterGallery(this,'ambience')">Ambience</button>
+          <button class="filter-btn" onclick="filterGallery(this,'products')">Products</button>
+        </div>
+
+        <!-- Masonry grid -->
+        <div class="gallery-masonry" id="gallery-masonry">
+
+          <!-- Tile 1 -->
+          <div class="gallery-tile" data-cat="treatment" data-index="0"
+            data-title="The Jade Suite" data-label="Treatment Room"
+            data-src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1000&q=85"
+            onclick="openLightbox(0)" data-aos="fade-up">
+            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=700&q=80" alt="The Jade Suite" loading="lazy" />
+            <span class="tile-badge">Treatment Room</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>The Jade Suite</h4><span>Treatment Room</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 2 -->
+          <div class="gallery-tile" data-cat="therapy" data-index="1"
+            data-title="Hot Stone Massage" data-label="Therapy"
+            data-src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1000&q=85"
+            onclick="openLightbox(1)" data-aos="fade-up" data-aos-delay="60">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=700&q=80" alt="Hot Stone Massage" loading="lazy" />
+            <span class="tile-badge">Therapy</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Hot Stone Massage</h4><span>Therapy</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 3 -->
+          <div class="gallery-tile" data-cat="ambience" data-index="2"
+            data-title="Candlelit Entrance" data-label="Ambience"
+            data-src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1000&q=85"
+            onclick="openLightbox(2)" data-aos="fade-up" data-aos-delay="120">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=80" alt="Candlelit Entrance" loading="lazy" />
+            <span class="tile-badge">Ambience</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Candlelit Entrance</h4><span>Ambience</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 4 -->
+          <div class="gallery-tile" data-cat="lounge" data-index="3"
+            data-title="The Garden Lounge" data-label="Relaxation Lounge"
+            data-src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1000&q=85"
+            onclick="openLightbox(3)" data-aos="fade-up">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=700&q=80" alt="The Garden Lounge" loading="lazy" />
+            <span class="tile-badge">Relaxation Lounge</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>The Garden Lounge</h4><span>Relaxation Lounge</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 5 -->
+          <div class="gallery-tile" data-cat="therapy" data-index="4"
+            data-title="Facial Treatment" data-label="Therapy"
+            data-src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=85"
+            onclick="openLightbox(4)" data-aos="fade-up" data-aos-delay="60">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80" alt="Facial Treatment" loading="lazy" />
+            <span class="tile-badge">Therapy</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Botanical Facial</h4><span>Therapy</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 6 -->
+          <div class="gallery-tile" data-cat="products" data-index="5"
+            data-title="Botanical Product Range" data-label="Products"
+            data-src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1000&q=85"
+            onclick="openLightbox(5)" data-aos="fade-up" data-aos-delay="120">
+            <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=700&q=80" alt="Products" loading="lazy" />
+            <span class="tile-badge">Products</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Botanical Product Range</h4><span>Products</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 7 -->
+          <div class="gallery-tile" data-cat="treatment" data-index="6"
+            data-title="The Saffron Room" data-label="Treatment Room"
+            data-src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1000&q=85"
+            onclick="openLightbox(6)" data-aos="fade-up">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=700&q=80" alt="The Saffron Room" loading="lazy" />
+            <span class="tile-badge">Treatment Room</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>The Saffron Room</h4><span>Treatment Room</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 8 -->
+          <div class="gallery-tile" data-cat="ambience" data-index="7"
+            data-title="Evening Serenity" data-label="Ambience"
+            data-src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=85"
+            onclick="openLightbox(7)" data-aos="fade-up" data-aos-delay="60">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Evening Serenity" loading="lazy" />
+            <span class="tile-badge">Ambience</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Evening Serenity</h4><span>Ambience</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 9 -->
+          <div class="gallery-tile" data-cat="therapy" data-index="8"
+            data-title="Aromatherapy Session" data-label="Therapy"
+            data-src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1000&q=85"
+            onclick="openLightbox(8)" data-aos="fade-up" data-aos-delay="120">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&q=80" alt="Aromatherapy" loading="lazy" />
+            <span class="tile-badge">Therapy</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Aromatherapy Session</h4><span>Therapy</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 10 -->
+          <div class="gallery-tile" data-cat="lounge" data-index="9"
+            data-title="Herbal Tea Corner" data-label="Relaxation Lounge"
+            data-src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1000&q=85"
+            onclick="openLightbox(9)" data-aos="fade-up">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=700&q=80" alt="Herbal Tea Corner" loading="lazy" />
+            <span class="tile-badge">Relaxation Lounge</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Herbal Tea Corner</h4><span>Relaxation Lounge</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 11 -->
+          <div class="gallery-tile" data-cat="products" data-index="10"
+            data-title="Essential Oil Collection" data-label="Products"
+            data-src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=1000&q=85"
+            onclick="openLightbox(10)" data-aos="fade-up" data-aos-delay="60">
+            <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=700&q=80" alt="Essential Oils" loading="lazy" />
+            <span class="tile-badge">Products</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>Essential Oil Collection</h4><span>Products</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 12 -->
+          <div class="gallery-tile" data-cat="ambience" data-index="11"
+            data-title="The Courtyard Garden" data-label="Ambience"
+            data-src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&q=85"
+            onclick="openLightbox(11)" data-aos="fade-up" data-aos-delay="120">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Courtyard Garden" loading="lazy" />
+            <span class="tile-badge">Ambience</span>
+            <div class="tile-overlay">
+              <div class="tile-info">
+                <div class="tile-info-text"><h4>The Courtyard Garden</h4><span>Ambience</span></div>
+                <div class="tile-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /gallery-masonry -->
+
+        <!-- Stats strip -->
+        <div class="gallery-stats-strip" data-aos="fade-up">
+          <div class="gs-item">
+            <span class="gs-number">4</span>
+            <span class="gs-label">Luxury Treatment Rooms</span>
+          </div>
+          <div class="gs-item">
+            <span class="gs-number">2</span>
+            <span class="gs-label">Private Couple Suites</span>
+          </div>
+          <div class="gs-item">
+            <span class="gs-number">1</span>
+            <span class="gs-label">Outdoor Courtyard Lounge</span>
+          </div>
+          <div class="gs-item">
+            <span class="gs-number">32</span>
+            <span class="gs-label">Signature Services</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ VIRTUAL TOUR ═══════════════ -->
+    <section class="inner-section alt-bg">
+      <div class="container">
+        <div class="section-label">Explore</div>
+        <h2 class="section-heading">Virtual Space Tour</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext">Can't visit us in person yet? Take a guided 360° look through our key spaces.</p>
+
+        <div class="tour-cards-grid">
+
+          <div class="tour-card" data-aos="fade-up">
+            <div class="tour-card-img">
+              <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80" alt="Treatment Rooms" />
+              <span class="tour-360-badge">360°</span>
+            </div>
+            <div class="tour-card-body">
+              <h4>Treatment Rooms</h4>
+              <p>Step inside our four bespoke suites — each designed around a different botanical theme with individually controlled lighting and temperature.</p>
+              <button class="tour-btn" onclick="alert('360° virtual tour of Treatment Rooms would launch here.')"><i class="fas fa-vr-cardboard" style="margin-right:6px;"></i>Start Tour</button>
+            </div>
+          </div>
+
+          <div class="tour-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="tour-card-img">
+              <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=80" alt="Relaxation Lounge" />
+              <span class="tour-360-badge">360°</span>
+            </div>
+            <div class="tour-card-body">
+              <h4>Relaxation Lounge</h4>
+              <p>Our pre- and post-treatment lounge where complimentary herbal teas, seasonal fruits, and soft ambient sound await you at every visit.</p>
+              <button class="tour-btn" onclick="alert('360° virtual tour of Relaxation Lounge would launch here.')"><i class="fas fa-vr-cardboard" style="margin-right:6px;"></i>Start Tour</button>
+            </div>
+          </div>
+
+          <div class="tour-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="tour-card-img">
+              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Courtyard Garden" />
+              <span class="tour-360-badge">360°</span>
+            </div>
+            <div class="tour-card-body">
+              <h4>Courtyard Garden</h4>
+              <p>Our private outdoor sanctuary — a curated botanical garden where guests are invited to meditate or simply breathe after their treatment.</p>
+              <button class="tour-btn" onclick="alert('360° virtual tour of Courtyard Garden would launch here.')"><i class="fas fa-vr-cardboard" style="margin-right:6px;"></i>Start Tour</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ INSTAGRAM STRIP ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="section-label">Follow Us</div>
+        <h2 class="section-heading">@serenityspa.in</h2>
+        <div class="section-rule"></div>
+        <p class="section-subtext" style="margin-bottom:2rem;">Follow our daily moments of serenity on Instagram.</p>
+
+        <div class="insta-strip">
+          <div class="insta-tile" data-aos="fade-up" data-aos-delay="0">
+            <img src="https://images.unsplash.com/photo-1601804075657-9bea4ca6ebb6?w=300&q=75" alt="Instagram" loading="lazy" />
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <div class="insta-tile" data-aos="fade-up" data-aos-delay="50">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=300&q=75" alt="Instagram" loading="lazy" />
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <div class="insta-tile" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=75" alt="Instagram" loading="lazy" />
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <div class="insta-tile" data-aos="fade-up" data-aos-delay="150">
+            <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=300&q=75" alt="Instagram" loading="lazy" />
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <div class="insta-tile" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=300&q=75" alt="Instagram" loading="lazy" />
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <div class="insta-tile" data-aos="fade-up" data-aos-delay="250">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&q=75" alt="Instagram" loading="lazy" />
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:1.8rem;">
+          <a href="https://instagram.com" target="_blank" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:12px 28px;">
+            <i class="fab fa-instagram"></i> Follow on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="inner-section alt-bg">
+      <div class="container">
+        <div class="cta-banner" data-aos="fade-up">
+          <h2>Experience It in Person</h2>
+          <p>No photograph can capture the scent of warm saffron oil or the silence of our treatment rooms. Come see for yourself.</p>
+          <div class="cta-banner-btns">
+            <button class="book-now-btn" onclick="window.location='booking.html'" style="padding:14px 32px; font-size:1rem;">
+              <i class="fas fa-calendar-check" style="margin-right:8px;"></i>Book a Visit
+            </button>
+            <a href="contact.html" class="btn-ghost"><i class="fas fa-map-marker-alt"></i>Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ LIGHTBOX ═══════════════ -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOutside(event)">
+      <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+      <button class="lightbox-nav lightbox-prev" onclick="shiftLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-nav lightbox-next" onclick="shiftLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+      <div class="lightbox-inner">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+        <div class="lightbox-caption">
+          <h4 id="lightbox-title"></h4>
+          <span id="lightbox-label"></span>
+        </div>
+      </div>
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Serenity Spa</h3>
+            <p>Your premier destination for relaxation and wellness. We combine ancient healing traditions with modern luxury to create transformative experiences.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="treatments.html">Treatments</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="treatments.html">Massage Therapy</a></li>
+              <li><a href="treatments.html">Facial Treatments</a></li>
+              <li><a href="treatments.html">Body Treatments</a></li>
+              <li><a href="treatments.html">Hydrotherapy</a></li>
+              <li><a href="treatments.html">Wellness Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> 14, MG Road, Indiranagar, Bengaluru – 560038</p>
+              <p><i class="fas fa-phone"></i> +91 80 4567 8901</p>
+              <p><i class="fas fa-envelope"></i> hello@serenityspa.in</p>
+              <p><i class="fas fa-clock"></i> Mon–Sun: 9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Serenity Spa. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./JS/gallery.js"></script>
+  </body>
+</html>

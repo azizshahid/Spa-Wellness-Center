@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellness Blog | Serenity Spa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css" />
+    <link rel="stylesheet" href="./CSS/blog.css">
+  </head>
+
+  <body>
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-spa"></i>
+          <span>Serenity Spa</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li><a href="blog.html" class="nav-link" style="color:var(--primary-color)">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="book-now-btn" onclick="window.location='booking.html'">Book Now</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div class="page-hero-tag">
+          <i class="fas fa-feather-alt"></i>
+          Wellness Journal
+        </div>
+        <h1>The Serenity Blog</h1>
+        <p>Expert insights, ancient rituals, and modern wellness wisdom — curated by our therapists to nourish your everyday life.</p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          Blog
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="blog-layout">
+
+          <!-- ── MAIN COLUMN ── -->
+          <div class="blog-main">
+
+            <!-- Featured article -->
+            <div class="featured-article" data-aos="fade-up" onclick="openModal('modal-1')">
+              <div class="featured-article-img">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Ayurvedic Rituals" />
+                <span class="featured-label">✦ Editor's Pick</span>
+              </div>
+              <div class="featured-article-body">
+                <div class="article-category">Ayurveda</div>
+                <h2>The Ancient Science of Abhyanga: Why Oil Self-Massage is the Most Important Ritual You're Not Doing</h2>
+                <div class="article-meta">
+                  <span><i class="fas fa-calendar"></i> 28 March 2025</span>
+                  <span><i class="fas fa-clock"></i> 7 min read</span>
+                  <span><i class="fas fa-eye"></i> 2.4k views</span>
+                </div>
+                <p>Abhyanga — the practice of warm oil self-massage — has been central to Ayurvedic medicine for over 5,000 years. Modern research is now catching up, confirming its profound effects on the nervous system, skin barrier, and cortisol regulation.</p>
+                <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-1')">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                <div class="author-mini">
+                  <div class="author-avatar">SN</div>
+                  <div class="author-mini-info">
+                    <span>Sunita Rao</span>
+                    <span>Senior Therapist · Ayurveda Specialist</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section heading + filters -->
+            <div class="articles-heading">
+              <h3>All Articles</h3>
+              <div class="filter-bar" id="blog-filter" style="margin-bottom:0;">
+                <button class="filter-btn active" onclick="filterBlog(this, 'all')">All</button>
+                <button class="filter-btn" onclick="filterBlog(this, 'ayurveda')">Ayurveda</button>
+                <button class="filter-btn" onclick="filterBlog(this, 'skincare')">Skincare</button>
+                <button class="filter-btn" onclick="filterBlog(this, 'mindfulness')">Mindfulness</button>
+                <button class="filter-btn" onclick="filterBlog(this, 'nutrition')">Nutrition</button>
+              </div>
+            </div>
+
+            <!-- Articles grid -->
+            <div class="articles-grid" id="articles-grid">
+
+              <div class="article-card" data-cat="skincare" data-aos="fade-up" onclick="openModal('modal-2')">
+                <div class="card-img">
+                  <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" alt="Skincare" />
+                  <span class="card-category-badge">Skincare</span>
+                </div>
+                <div class="card-body">
+                  <h4>The Truth About Double Cleansing and Why Your Skin Type Changes with the Seasons</h4>
+                  <p>As Bengaluru's humidity fluctuates between seasons, your cleansing routine needs to adapt. Here's how to read your skin's signals.</p>
+                  <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-2')">Read More <i class="fas fa-arrow-right"></i></a>
+                  <div class="card-footer">
+                    <div class="card-footer-meta">
+                      <span><i class="fas fa-calendar"></i> 14 Mar 2025</span>
+                      <span><i class="fas fa-clock"></i> 5 min</span>
+                    </div>
+                    <div class="author-avatar" style="width:28px;height:28px;font-size:0.65rem;">MI</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-card" data-cat="mindfulness" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-3')">
+                <div class="card-img">
+                  <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Mindfulness" />
+                  <span class="card-category-badge">Mindfulness</span>
+                </div>
+                <div class="card-body">
+                  <h4>5 Breathing Exercises Our Therapists Use Before Every Session to Drop Into Presence</h4>
+                  <p>The way you breathe changes everything — from muscle tension to skin circulation. These are the techniques our team swears by.</p>
+                  <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-3')">Read More <i class="fas fa-arrow-right"></i></a>
+                  <div class="card-footer">
+                    <div class="card-footer-meta">
+                      <span><i class="fas fa-calendar"></i> 5 Mar 2025</span>
+                      <span><i class="fas fa-clock"></i> 4 min</span>
+                    </div>
+                    <div class="author-avatar" style="width:28px;height:28px;font-size:0.65rem;">PN</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-card" data-cat="ayurveda" data-aos="fade-up" onclick="openModal('modal-4')">
+                <div class="card-img">
+                  <img src="https://images.unsplash.com/photo-1601804075657-9bea4ca6ebb6?w=600&q=80" alt="Ayurveda" />
+                  <span class="card-category-badge">Ayurveda</span>
+                </div>
+                <div class="card-body">
+                  <h4>Understanding Your Dosha: How Knowing Your Body Type Can Transform Your Wellness Routine</h4>
+                  <p>Vata, Pitta, or Kapha — your Ayurvedic constitution influences everything from what treatments suit you to what foods calm your nervous system.</p>
+                  <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-4')">Read More <i class="fas fa-arrow-right"></i></a>
+                  <div class="card-footer">
+                    <div class="card-footer-meta">
+                      <span><i class="fas fa-calendar"></i> 20 Feb 2025</span>
+                      <span><i class="fas fa-clock"></i> 8 min</span>
+                    </div>
+                    <div class="author-avatar" style="width:28px;height:28px;font-size:0.65rem;">SR</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-card" data-cat="nutrition" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-5')">
+                <div class="card-img">
+                  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Nutrition" />
+                  <span class="card-category-badge">Nutrition</span>
+                </div>
+                <div class="card-body">
+                  <h4>Eating for Your Skin: 7 Foods Our Aestheticians Recommend for a Natural Glow from Within</h4>
+                  <p>No serum can out-perform a well-nourished body. Here are the foods our skin specialists eat every day for lasting luminosity.</p>
+                  <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-5')">Read More <i class="fas fa-arrow-right"></i></a>
+                  <div class="card-footer">
+                    <div class="card-footer-meta">
+                      <span><i class="fas fa-calendar"></i> 8 Feb 2025</span>
+                      <span><i class="fas fa-clock"></i> 6 min</span>
+                    </div>
+                    <div class="author-avatar" style="width:28px;height:28px;font-size:0.65rem;">AD</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-card" data-cat="mindfulness" data-aos="fade-up" onclick="openModal('modal-6')">
+                <div class="card-img">
+                  <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" alt="Sleep" />
+                  <span class="card-category-badge">Mindfulness</span>
+                </div>
+                <div class="card-body">
+                  <h4>The Sleep Ritual: How a 20-Minute Bedtime Wind-Down Routine Can Add an Hour of Deep Sleep</h4>
+                  <p>Poor sleep is the most underrated wellness issue today. Our therapists share the evening rituals that genuinely work — no supplements required.</p>
+                  <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-6')">Read More <i class="fas fa-arrow-right"></i></a>
+                  <div class="card-footer">
+                    <div class="card-footer-meta">
+                      <span><i class="fas fa-calendar"></i> 25 Jan 2025</span>
+                      <span><i class="fas fa-clock"></i> 5 min</span>
+                    </div>
+                    <div class="author-avatar" style="width:28px;height:28px;font-size:0.65rem;">RS</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-card" data-cat="skincare" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-7')">
+                <div class="card-img">
+                  <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Facial" />
+                  <span class="card-category-badge">Skincare</span>
+                </div>
+                <div class="card-body">
+                  <h4>Gua Sha vs. Jade Roller: Which Tool Is Actually Better for Your Skin, and Does it Matter?</h4>
+                  <p>Both tools have taken social media by storm, but the science behind them is quite different. We break down what each actually does — and what neither can do.</p>
+                  <a href="#" class="read-more-link" onclick="event.stopPropagation(); openModal('modal-7')">Read More <i class="fas fa-arrow-right"></i></a>
+                  <div class="card-footer">
+                    <div class="card-footer-meta">
+                      <span><i class="fas fa-calendar"></i> 12 Jan 2025</span>
+                      <span><i class="fas fa-clock"></i> 6 min</span>
+                    </div>
+                    <div class="author-avatar" style="width:28px;height:28px;font-size:0.65rem;">MI</div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /articles-grid -->
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+          </div><!-- /blog-main -->
+
+          <!-- ── SIDEBAR ── -->
+          <aside class="blog-sidebar" data-aos="fade-left" data-aos-delay="200">
+
+            <!-- Search -->
+            <div class="sidebar-section">
+              <div class="sidebar-title">Search Articles</div>
+              <div class="sidebar-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="e.g. hot stone, sleep, dosha…" />
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="sidebar-section">
+              <div class="sidebar-title">Categories</div>
+              <ul class="category-list">
+                <li onclick="filterBlog(null,'all')"><a href="#">All Articles</a><span class="cat-count">12</span></li>
+                <li onclick="filterBlog(null,'ayurveda')"><a href="#">Ayurveda</a><span class="cat-count">4</span></li>
+                <li onclick="filterBlog(null,'skincare')"><a href="#">Skincare</a><span class="cat-count">3</span></li>
+                <li onclick="filterBlog(null,'mindfulness')"><a href="#">Mindfulness</a><span class="cat-count">3</span></li>
+                <li onclick="filterBlog(null,'nutrition')"><a href="#">Nutrition</a><span class="cat-count">2</span></li>
+              </ul>
+            </div>
+
+            <!-- Popular posts -->
+            <div class="sidebar-section">
+              <div class="sidebar-title">Popular This Month</div>
+              <div class="popular-post" onclick="openModal('modal-1')">
+                <img class="popular-post-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=120&q=70" alt="Abhyanga" />
+                <div class="popular-post-text">
+                  <h6>The Ancient Science of Abhyanga</h6>
+                  <span><i class="fas fa-eye"></i> 2,400 views</span>
+                </div>
+              </div>
+              <div class="popular-post" onclick="openModal('modal-4')">
+                <img class="popular-post-img" src="https://images.unsplash.com/photo-1601804075657-9bea4ca6ebb6?w=120&q=70" alt="Dosha" />
+                <div class="popular-post-text">
+                  <h6>Understanding Your Dosha</h6>
+                  <span><i class="fas fa-eye"></i> 1,850 views</span>
+                </div>
+              </div>
+              <div class="popular-post" onclick="openModal('modal-6')">
+                <img class="popular-post-img" src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=120&q=70" alt="Sleep" />
+                <div class="popular-post-text">
+                  <h6>The Sleep Ritual</h6>
+                  <span><i class="fas fa-eye"></i> 1,620 views</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="sidebar-section">
+              <div class="sidebar-title">Popular Tags</div>
+              <div class="tag-cloud">
+                <a href="#" class="tag-pill">Abhyanga</a>
+                <a href="#" class="tag-pill">Hot Stones</a>
+                <a href="#" class="tag-pill">Dosha</a>
+                <a href="#" class="tag-pill">Glow</a>
+                <a href="#" class="tag-pill">Sleep</a>
+                <a href="#" class="tag-pill">Breathing</a>
+                <a href="#" class="tag-pill">Turmeric</a>
+                <a href="#" class="tag-pill">Collagen</a>
+                <a href="#" class="tag-pill">Self-care</a>
+                <a href="#" class="tag-pill">Vata</a>
+                <a href="#" class="tag-pill">Saffron</a>
+                <a href="#" class="tag-pill">Pitta</a>
+              </div>
+            </div>
+
+            <!-- Sidebar newsletter -->
+            <div class="sidebar-newsletter">
+              <i class="fas fa-envelope-open-text"></i>
+              <h4>Weekly Wellness</h4>
+              <p>Join 3,200 readers getting our best tips every Sunday morning.</p>
+              <input type="email" placeholder="Your email address" />
+              <button>Subscribe Free</button>
+            </div>
+
+            <!-- CTA -->
+            <div style="background:var(--light-bg); border-radius:var(--border-radius); padding:1.5rem; text-align:center;">
+              <i class="fas fa-spa" style="font-size:1.8rem; color:var(--accent-color); margin-bottom:0.8rem; display:block;"></i>
+              <h4 style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--primary-color); margin-bottom:0.4rem;">Ready to Experience It?</h4>
+              <p style="font-size:0.8rem; color:var(--text-light); line-height:1.6; margin-bottom:1rem;">Stop reading about wellness — come live it.</p>
+              <a href="booking.html" class="book-now-btn" style="display:inline-block; text-decoration:none; font-size:0.88rem; padding:10px 22px;">Book a Treatment</a>
+            </div>
+
+          </aside>
+
+        </div><!-- /blog-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════ ARTICLE MODALS ═══════════════ -->
+    <!-- Modal 1 -->
+    <div class="article-modal-overlay" id="modal-1" onclick="closeModalOutside(event, 'modal-1')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-1')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Abhyanga" />
+        <div class="modal-body">
+          <div class="article-category">Ayurveda</div>
+          <h2>The Ancient Science of Abhyanga</h2>
+          <div class="article-meta">
+            <span><i class="fas fa-user"></i> Sunita Rao</span>
+            <span><i class="fas fa-calendar"></i> 28 March 2025</span>
+            <span><i class="fas fa-clock"></i> 7 min read</span>
+          </div>
+          <p>Abhyanga — the daily practice of anointing oneself with warm oil — is described in the Ashtanga Hridayam, one of Ayurveda's foundational texts, as one of the most important self-care practices a person can adopt. The word itself comes from Sanskrit: <em>abhi</em> (toward) and <em>anga</em> (limb), pointing to the full-body, intentional nature of the ritual.</p>
+          <p>Unlike a standard moisturiser applied quickly, Abhyanga is practised slowly and with full attention — typically for 15–20 minutes before bathing. The oil is warmed, and applied in long strokes along the long bones and circular motions at the joints. This movement pattern mirrors the direction of lymphatic flow and venous return.</p>
+          <p>Modern research in integrative medicine has confirmed several of the benefits described by ancient practitioners. Studies show that regular oil massage reduces salivary cortisol levels, lowers blood pressure, and significantly improves perceived stress within three weeks of daily practice. The lipid layer of the skin is also reinforced, reducing transepidermal water loss — the primary driver of dry, sensitised skin.</p>
+          <p>At Serenity Spa, our therapists incorporate Abhyanga principles into every treatment. If you'd like to build a home practice, sesame oil is traditionally recommended for Vata types, coconut oil for Pitta, and mustard oil for Kapha. The oil should be warm — not hot — and the practice ideally done in the morning before showering.</p>
+          <p style="margin-top:1.5rem; padding:1rem 1.2rem; background:var(--light-bg); border-left:3px solid var(--accent-color); border-radius:0 var(--border-radius) var(--border-radius) 0; font-style:italic; color:var(--text-dark);">"Give yourself an oil massage daily. It will make you strong, give you a good complexion, and nourish your tissues." — Charaka Samhita</p>
+          <div style="margin-top:2rem; text-align:center;">
+            <a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Experience Abhyanga at Serenity <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="article-modal-overlay" id="modal-2" onclick="closeModalOutside(event, 'modal-2')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-2')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80" alt="Skincare" />
+        <div class="modal-body">
+          <div class="article-category">Skincare</div>
+          <h2>The Truth About Double Cleansing</h2>
+          <div class="article-meta">
+            <span><i class="fas fa-user"></i> Meera Iyer</span>
+            <span><i class="fas fa-calendar"></i> 14 March 2025</span>
+            <span><i class="fas fa-clock"></i> 5 min read</span>
+          </div>
+          <p>Double cleansing originated in Japan, where it has been a cornerstone of skincare routines for decades. The method uses an oil-based cleanser first to dissolve makeup, sunscreen, and sebum — then a water-based cleanser to remove the remaining impurities and balance the skin's pH.</p>
+          <p>In Bengaluru's climate, where humidity and pollution vary dramatically between seasons, your skin barrier is under constant challenge. During the monsoon months, a lighter oil like jojoba works well as the first cleanse. In the dry winter months, richer oils like marula or rosehip are more appropriate.</p>
+          <p>The most important thing to understand is that over-cleansing is equally damaging as under-cleansing. If you're double cleansing and still feel tight or dry after, your second cleanser may be too stripping. Switch to a cream or gel formula with a neutral pH (around 5.5) and watch how your skin transforms within two weeks.</p>
+          <div style="margin-top:2rem; text-align:center;">
+            <a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Book a Facial <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals 3–7 (simplified) -->
+    <div class="article-modal-overlay" id="modal-3" onclick="closeModalOutside(event, 'modal-3')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-3')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" alt="Breathing" />
+        <div class="modal-body">
+          <div class="article-category">Mindfulness</div>
+          <h2>5 Breathing Exercises Our Therapists Swear By</h2>
+          <div class="article-meta"><span><i class="fas fa-user"></i> Priya Nair</span><span><i class="fas fa-calendar"></i> 5 March 2025</span><span><i class="fas fa-clock"></i> 4 min read</span></div>
+          <p>Before stepping into a treatment room, every Serenity therapist spends three minutes with their breath. This isn't superstition — it's a deliberate practice to shift the nervous system from sympathetic (fight-or-flight) to parasympathetic (rest-and-restore) mode. The science is clear: the way you breathe directly governs your physiological state.</p>
+          <p><strong style="color:var(--primary-color);">1. Box Breathing (4-4-4-4):</strong> Inhale for 4 counts, hold for 4, exhale for 4, hold for 4. Used by Navy SEALs and yogis alike for equal-minded calm.</p>
+          <p><strong style="color:var(--primary-color);">2. 4-7-8 Breathing:</strong> Inhale 4 counts, hold 7, exhale 8. The extended exhale activates the vagus nerve, dropping heart rate within two cycles.</p>
+          <p><strong style="color:var(--primary-color);">3. Nadi Shodhana (Alternate Nostril):</strong> Close the right nostril, inhale left, switch, exhale right. Repeat. Balances the two hemispheres of the brain and is particularly effective for anxiety.</p>
+          <p><strong style="color:var(--primary-color);">4. Bhramari (Humming Bee Breath):</strong> Exhale while making a gentle humming sound. The vibration stimulates the vagus nerve directly through the vocal cords.</p>
+          <p><strong style="color:var(--primary-color);">5. Physiological Sigh:</strong> Take a full inhale, then a short extra inhale on top, then a long slow exhale. This double inhale pops collapsed alveoli in the lungs and is the fastest way to reduce acute stress.</p>
+          <div style="margin-top:2rem; text-align:center;"><a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Book a Wellness Session <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-modal-overlay" id="modal-4" onclick="closeModalOutside(event,'modal-4')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-4')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1601804075657-9bea4ca6ebb6?w=800&q=80" alt="Dosha" />
+        <div class="modal-body">
+          <div class="article-category">Ayurveda</div>
+          <h2>Understanding Your Dosha</h2>
+          <div class="article-meta"><span><i class="fas fa-user"></i> Sunita Rao</span><span><i class="fas fa-calendar"></i> 20 Feb 2025</span><span><i class="fas fa-clock"></i> 8 min read</span></div>
+          <p>Ayurveda recognises three fundamental constitutional types — Vata, Pitta, and Kapha — each governed by a combination of the five classical elements (earth, water, fire, air, ether). Most people are a combination of two doshas, with one typically dominant.</p>
+          <p><strong style="color:var(--primary-color);">Vata (Air + Ether):</strong> Creative, quick-thinking, enthusiastic — but prone to anxiety, dry skin, and irregular digestion when imbalanced. Best treatments: warm, grounding, slow. Oils: sesame, almond.</p>
+          <p><strong style="color:var(--primary-color);">Pitta (Fire + Water):</strong> Focused, driven, articulate — but prone to inflammation, redness, and irritability when excess. Best treatments: cooling, calming, medium pressure. Oils: coconut, sunflower.</p>
+          <p><strong style="color:var(--primary-color);">Kapha (Earth + Water):</strong> Steady, nurturing, patient — but prone to sluggishness, weight gain, and congestion when imbalanced. Best treatments: invigorating, deep, stimulating. Oils: mustard, sesame with ginger.</p>
+          <p>At Serenity, our consultation begins with a simple dosha assessment. This informs oil selection, pressure level, treatment duration, and even the room temperature — so every session is truly bespoke.</p>
+          <div style="margin-top:2rem; text-align:center;"><a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Book Your Dosha Consultation <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-modal-overlay" id="modal-5" onclick="closeModalOutside(event,'modal-5')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-5')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" alt="Nutrition" />
+        <div class="modal-body">
+          <div class="article-category">Nutrition</div>
+          <h2>Eating for Your Skin: 7 Foods Our Aestheticians Eat Daily</h2>
+          <div class="article-meta"><span><i class="fas fa-user"></i> Arjun Das</span><span><i class="fas fa-calendar"></i> 8 Feb 2025</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+          <p>The skin is the body's largest organ, and it reflects everything happening internally. Here are seven foods our team incorporates daily for sustained skin radiance — no expensive supplements required.</p>
+          <p><strong style="color:var(--primary-color);">1. Amla (Indian Gooseberry):</strong> One of the world's densest sources of Vitamin C — 20× more than an orange. Vitamin C is the rate-limiting nutrient for collagen synthesis.</p>
+          <p><strong style="color:var(--primary-color);">2. Ghee:</strong> Rich in butyrate and fat-soluble vitamins A, D, E, and K. Supports gut lining integrity, which directly impacts skin barrier function.</p>
+          <p><strong style="color:var(--primary-color);">3. Turmeric:</strong> Curcumin is a potent anti-inflammatory and mild photoprotective agent. Most effective when consumed with black pepper and a fat source.</p>
+          <p><strong style="color:var(--primary-color);">4. Walnuts:</strong> The only nut with a meaningful omega-3 to omega-6 ratio, reducing systemic inflammation that drives acne, eczema, and premature ageing.</p>
+          <p><strong style="color:var(--primary-color);">5. Papaya:</strong> Contains papain, a proteolytic enzyme that gently exfoliates the skin from within and supports healthy digestion.</p>
+          <p><strong style="color:var(--primary-color);">6. Moringa:</strong> Contains all nine essential amino acids — necessary for collagen, elastin, and keratin production.</p>
+          <p><strong style="color:var(--primary-color);">7. Saffron:</strong> Used topically in our Himalayan Ritual and internally for its crocin antioxidants, which protect skin cells from UV-induced damage.</p>
+          <div style="margin-top:2rem; text-align:center;"><a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Book a Glow Treatment <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-modal-overlay" id="modal-6" onclick="closeModalOutside(event,'modal-6')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-6')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80" alt="Sleep" />
+        <div class="modal-body">
+          <div class="article-category">Mindfulness</div>
+          <h2>The Sleep Ritual: A 20-Minute Wind-Down</h2>
+          <div class="article-meta"><span><i class="fas fa-user"></i> Rahul Sharma</span><span><i class="fas fa-calendar"></i> 25 Jan 2025</span><span><i class="fas fa-clock"></i> 5 min read</span></div>
+          <p>Deep sleep is when the body repairs tissue, regulates hormones, and consolidates memory. Yet most adults report that they can't "switch off" at night — lying in bed with an active mind despite physical tiredness. The issue isn't usually sleep itself; it's the transition into sleep.</p>
+          <p>Our recommended 20-minute ritual:</p>
+          <p><strong style="color:var(--primary-color);">Minutes 1–5: Sensory cool-down.</strong> Lower room temperature to 19–21°C. This triggers melatonin release. Dim all lights to below 10 lux. Avoid screens entirely.</p>
+          <p><strong style="color:var(--primary-color);">Minutes 5–10: Abhyanga (light version).</strong> Apply a small amount of warm sesame or coconut oil to your feet, calves, and hands. The feet have 72,000 nerve endings connected to the entire nervous system — massaging them for five minutes genuinely calms the whole body.</p>
+          <p><strong style="color:var(--primary-color);">Minutes 10–15: Breathing.</strong> Practice the 4-7-8 breathing technique described in our previous article. Six rounds is typically enough to shift into parasympathetic dominance.</p>
+          <p><strong style="color:var(--primary-color);">Minutes 15–20: Gratitude journaling.</strong> Write three specific things that went well today and why. Research by Martin Seligman shows this single practice, done consistently, adds 30–90 minutes of measurable deep sleep within two weeks.</p>
+          <div style="margin-top:2rem; text-align:center;"><a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Book a Restorative Treatment <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-modal-overlay" id="modal-7" onclick="closeModalOutside(event,'modal-7')">
+      <div class="article-modal">
+        <div class="modal-close"><button onclick="closeModal('modal-7')"><i class="fas fa-times"></i></button></div>
+        <img class="modal-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80" alt="Gua Sha" />
+        <div class="modal-body">
+          <div class="article-category">Skincare</div>
+          <h2>Gua Sha vs. Jade Roller: What the Science Actually Says</h2>
+          <div class="article-meta"><span><i class="fas fa-user"></i> Meera Iyer</span><span><i class="fas fa-calendar"></i> 12 Jan 2025</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+          <p>Both tools have become fixtures on every aesthete's vanity. But they do fundamentally different things — and neither does what most influencers claim.</p>
+          <p><strong style="color:var(--primary-color);">Jade Roller:</strong> The rolling motion stimulates lymphatic drainage in the face, reducing morning puffiness. Studies confirm a temporary reduction in under-eye fluid retention. What it cannot do: lift muscles, reduce wrinkles, or change skin texture. Use it cold, in upward and outward strokes, after applying a serum while the skin is still damp.</p>
+          <p><strong style="color:var(--primary-color);">Gua Sha:</strong> Derived from traditional Chinese medicine, gua sha uses scraping pressure to increase microcirculation by up to 400% in the treated area. This brings fresh blood to the surface, temporarily brightening the complexion and reducing fascial tension in the face. Used consistently over months, it can subtly improve facial muscle tone — the only non-invasive tool with credible evidence for this claim.</p>
+          <p>The winner? Gua sha, for most goals beyond puffiness reduction. But the technique matters enormously — incorrect pressure can break capillaries. Our aestheticians are happy to show you proper technique during any facial treatment.</p>
+          <div style="margin-top:2rem; text-align:center;"><a href="booking.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">Book a Facial <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Serenity Spa</h3>
+            <p>Your premier destination for relaxation and wellness. We combine ancient healing traditions with modern luxury to create transformative experiences.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="treatments.html">Treatments</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="treatments.html">Massage Therapy</a></li>
+              <li><a href="treatments.html">Facial Treatments</a></li>
+              <li><a href="treatments.html">Body Treatments</a></li>
+              <li><a href="treatments.html">Hydrotherapy</a></li>
+              <li><a href="treatments.html">Wellness Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> 14, MG Road, Indiranagar, Bengaluru – 560038</p>
+              <p><i class="fas fa-phone"></i> +91 80 4567 8901</p>
+              <p><i class="fas fa-envelope"></i> hello@serenityspa.in</p>
+              <p><i class="fas fa-clock"></i> Mon–Sun: 9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Serenity Spa. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./JS/blog.js"></script>
+  </body>
+</html>

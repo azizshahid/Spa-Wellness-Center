@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Serenity Spa</title>
+  <link rel="stylesheet" href="./CSS/styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAV — identical structure to Index.html -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-spa"></i>
+        <span>Serenity Spa</span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="./Index.html#home" class="nav-link">Home</a></li>
+        <li><a href="./Index.html#about" class="nav-link">About</a></li>
+        <li><a href="./Index.html#treatments" class="nav-link">Treatments</a></li>
+        <li><a href="./about.html" class="nav-link">About Us</a></li>
+        <li><a href="./contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="book-now-btn">Book Now</button>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner container">
+      <div class="page-hero-tag"><i class="fas fa-envelope"></i>&nbsp; Get In Touch</div>
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you. Reach out to book a treatment, ask a question, or simply say hello.</p>
+      <div class="breadcrumb">
+        <a href="./Index.html">Home</a>
+        <span>&rsaquo;</span>
+        Contact Us
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="inner-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap">
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and one of our wellness consultants will get back to you within 24 hours.</p>
+
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName">First Name</label>
+                <input type="text" id="firstName" class="form-input" placeholder="Emma" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input type="text" id="lastName" class="form-input" placeholder="Davis" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="emma@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-input" placeholder="(555) 000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">Interested Treatment</label>
+              <select id="service" class="form-select">
+                <option value="">Select a treatment…</option>
+                <option>Aromatherapy Massage</option>
+                <option>Diamond Facial</option>
+                <option>Hydrotherapy</option>
+                <option>Wellness Package</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Your Message</label>
+              <textarea id="message" class="form-textarea" placeholder="Tell us how we can help you…"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info Panel -->
+        <div class="contact-info-wrap">
+          <h2>Visit Our Sanctuary</h2>
+          <p>We're nestled in the heart of the city, ready to offer you a moment of calm from the everyday.</p>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-text">
+              <h4>Our Address</h4>
+              <p>123 Wellness Street<br />Serenity City, SC 12345</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-text">
+              <h4>Call Us</h4>
+              <a href="tel:5551234567">(555) 123-4567</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-text">
+              <h4>Email</h4>
+              <a href="mailto:info@serenityspa.com">info@serenityspa.com</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-text">
+              <h4>Opening Hours</h4>
+              <p>Monday – Sunday<br />9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="contact-map">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>123 Wellness Street, Serenity City</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS — reuses existing .stats section from styles.css -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-number">13+</div>
+          <div class="stat-label">Expert Therapists</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-spa"></i></div>
+          <div class="stat-number">32</div>
+          <div class="stat-label">Signature Services</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-award"></i></div>
+          <div class="stat-number">2</div>
+          <div class="stat-label">Industry Awards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER — identical structure to Index.html -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Serenity Spa</h3>
+          <p>Your premier destination for relaxation and wellness, combining ancient healing traditions with modern
+            luxury.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./Index.html">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./Index.html#treatments">Treatments</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./terms.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Massage Therapy</a></li>
+            <li><a href="#">Facial Treatments</a></li>
+            <li><a href="#">Body Treatments</a></li>
+            <li><a href="#">Hydrotherapy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Street, Serenity City</p>
+            <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> info@serenityspa.com</p>
+            <p><i class="fas fa-clock"></i> Mon–Sun: 9 AM – 9 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Serenity Spa. All rights reserved. | <a href="./terms.html" style="color:inherit">Privacy
+            Policy</a> | <a href="./terms.html" style="color:inherit">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="./JS/Index.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      this.querySelector(".form-submit").textContent = "Message Sent ✓";
+      this.querySelector(".form-submit").style.background = "#4a7c45";
+    });
+  </script>
+</body>
+
+</html>

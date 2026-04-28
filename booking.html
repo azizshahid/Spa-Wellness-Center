@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Treatment | Serenity Spa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/serenity-spa-styles-additions.css" />
+    <link rel="stylesheet" href="./CSS/booking.css">
+  </head>
+
+  <body>
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-spa"></i>
+          <span>Serenity Spa</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="book-now-btn" onclick="window.location='booking.html'" style="background:var(--accent-color);">Book Now</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div class="page-hero-tag">
+          <i class="fas fa-calendar-check"></i>
+          Reserve Your Visit
+        </div>
+        <h1>Book a Treatment</h1>
+        <p>Choose your treatment, pick a time, and let us take care of the rest. Your journey to serenity is just a few steps away.</p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          Book a Treatment
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ BOOKING FORM ═══════════════ -->
+    <section class="inner-section">
+      <div class="container">
+
+        <div id="booking-form-wrap">
+          <!-- Progress bar -->
+          <div class="steps-bar" id="steps-bar">
+            <div class="step-pill active" data-step="1">
+              <div class="step-circle">1</div>
+              <span class="step-label">Treatment</span>
+            </div>
+            <div class="step-pill" data-step="2">
+              <div class="step-circle">2</div>
+              <span class="step-label">Schedule</span>
+            </div>
+            <div class="step-pill" data-step="3">
+              <div class="step-circle">3</div>
+              <span class="step-label">Add-Ons</span>
+            </div>
+            <div class="step-pill" data-step="4">
+              <div class="step-circle">4</div>
+              <span class="step-label">Details</span>
+            </div>
+            <div class="step-pill" data-step="5">
+              <div class="step-circle">5</div>
+              <span class="step-label">Confirm</span>
+            </div>
+          </div>
+
+          <div class="booking-layout">
+            <!-- LEFT COLUMN -->
+            <div class="booking-left">
+
+              <!-- ── STEP 1: Treatment ── -->
+              <div class="booking-step active" id="step-1">
+                <h2 class="step-title">Choose Your Treatment</h2>
+                <p class="step-subtitle">Select the therapy that speaks to you. Our expert therapists will personalise each session to your needs.</p>
+
+                <div class="treatment-selector" id="treatment-selector">
+                  <div class="treat-option" data-treatment="Swedish Relaxation" data-price="3200" onclick="selectTreatment(this)">
+                    <div class="treat-icon-sm"><i class="fas fa-hands"></i></div>
+                    <h4>Swedish Relaxation</h4>
+                    <p>Classic full-body massage using flowing strokes to ease tension and improve circulation.</p>
+                    <div class="treat-meta">
+                      <span><i class="fas fa-clock"></i> 60–90 min</span>
+                      <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <div class="treat-price-tag">₹3,200</div>
+                  </div>
+
+                  <div class="treat-option" data-treatment="Deep Tissue Therapy" data-price="4100" onclick="selectTreatment(this)">
+                    <div class="treat-icon-sm"><i class="fas fa-fire-alt"></i></div>
+                    <h4>Deep Tissue Therapy</h4>
+                    <p>Targets deep muscle layers to release chronic knots and postural tension.</p>
+                    <div class="treat-meta">
+                      <span><i class="fas fa-clock"></i> 75–105 min</span>
+                      <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <div class="treat-price-tag">₹4,100</div>
+                  </div>
+
+                  <div class="treat-option" data-treatment="Botanical Glow Facial" data-price="3800" onclick="selectTreatment(this)">
+                    <div class="treat-icon-sm"><i class="fas fa-seedling"></i></div>
+                    <h4>Botanical Glow Facial</h4>
+                    <p>Vitamin-rich facial with rosehip oil and jade-roller sculpting technique.</p>
+                    <div class="treat-meta">
+                      <span><i class="fas fa-clock"></i> 60 min</span>
+                      <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                    <div class="treat-price-tag">₹3,800</div>
+                  </div>
+
+                  <div class="treat-option" data-treatment="Himalayan Harmony Ritual" data-price="8500" onclick="selectTreatment(this)">
+                    <div class="treat-icon-sm"><i class="fas fa-mountain"></i></div>
+                    <h4>Himalayan Harmony Ritual</h4>
+                    <p>Three-hour signature journey with warm salt stones and saffron oil. Our best seller.</p>
+                    <div class="treat-meta">
+                      <span><i class="fas fa-clock"></i> 180 min</span>
+                      <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                    <div class="treat-price-tag">₹8,500</div>
+                  </div>
+
+                  <div class="treat-option" data-treatment="Aromatherapy Journey" data-price="3500" onclick="selectTreatment(this)">
+                    <div class="treat-icon-sm"><i class="fas fa-spa"></i></div>
+                    <h4>Aromatherapy Journey</h4>
+                    <p>Essential-oil rituals combined with lymphatic-stimulating massage.</p>
+                    <div class="treat-meta">
+                      <span><i class="fas fa-clock"></i> 60 min</span>
+                      <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <div class="treat-price-tag">₹3,500</div>
+                  </div>
+
+                  <div class="treat-option" data-treatment="Moonlit Couples Ritual" data-price="14000" onclick="selectTreatment(this)">
+                    <div class="treat-icon-sm"><i class="fas fa-heart"></i></div>
+                    <h4>Moonlit Couples Ritual</h4>
+                    <p>Side-by-side massages with a private champagne bath and rose-petal polish.</p>
+                    <div class="treat-meta">
+                      <span><i class="fas fa-clock"></i> 120 min</span>
+                      <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                    <div class="treat-price-tag">₹14,000</div>
+                  </div>
+                </div>
+
+                <label class="form-label">Duration Preference</label>
+                <div class="duration-chips" id="duration-chips">
+                  <button class="dur-chip selected" onclick="selectDuration(this, '60 min')">60 min</button>
+                  <button class="dur-chip" onclick="selectDuration(this, '75 min')">75 min</button>
+                  <button class="dur-chip" onclick="selectDuration(this, '90 min')">90 min</button>
+                  <button class="dur-chip" onclick="selectDuration(this, '105 min')">105 min</button>
+                  <button class="dur-chip" onclick="selectDuration(this, '120 min')">120 min</button>
+                  <button class="dur-chip" onclick="selectDuration(this, '180 min')">180 min</button>
+                </div>
+
+                <label class="form-label">Therapist Preference</label>
+                <div class="therapist-grid">
+                  <div class="therapist-card" onclick="selectTherapist(this, 'No Preference')">
+                    <div class="therapist-avatar-placeholder">✦</div>
+                    <h5>No Preference</h5>
+                    <p>Best available</p>
+                    <div class="therapist-stars">★★★★★</div>
+                  </div>
+                  <div class="therapist-card" onclick="selectTherapist(this, 'Priya Nair')">
+                    <div class="therapist-avatar-placeholder">PN</div>
+                    <h5>Priya Nair</h5>
+                    <p>Ayurvedic · 8 yrs</p>
+                    <div class="therapist-stars">★★★★★</div>
+                  </div>
+                  <div class="therapist-card" onclick="selectTherapist(this, 'Rahul Sharma')">
+                    <div class="therapist-avatar-placeholder">RS</div>
+                    <h5>Rahul Sharma</h5>
+                    <p>Deep Tissue · 6 yrs</p>
+                    <div class="therapist-stars">★★★★★</div>
+                  </div>
+                  <div class="therapist-card" onclick="selectTherapist(this, 'Meera Iyer')">
+                    <div class="therapist-avatar-placeholder">MI</div>
+                    <h5>Meera Iyer</h5>
+                    <p>Facials · 5 yrs</p>
+                    <div class="therapist-stars">★★★★★</div>
+                  </div>
+                  <div class="therapist-card" onclick="selectTherapist(this, 'Arjun Das')">
+                    <div class="therapist-avatar-placeholder">AD</div>
+                    <h5>Arjun Das</h5>
+                    <p>Hot Stone · 7 yrs</p>
+                    <div class="therapist-stars">★★★★★</div>
+                  </div>
+                  <div class="therapist-card" onclick="selectTherapist(this, 'Sunita Rao')">
+                    <div class="therapist-avatar-placeholder">SR</div>
+                    <h5>Sunita Rao</h5>
+                    <p>Aromatherapy · 9 yrs</p>
+                    <div class="therapist-stars">★★★★★</div>
+                  </div>
+                </div>
+
+                <div class="step-nav">
+                  <button class="btn-next" onclick="goToStep(2)">Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- ── STEP 2: Schedule ── -->
+              <div class="booking-step" id="step-2">
+                <h2 class="step-title">Pick a Date & Time</h2>
+                <p class="step-subtitle">We're open seven days a week, 9 AM – 9 PM. Choose what works best for you.</p>
+
+                <div class="calendar-wrap">
+                  <div class="cal-header">
+                    <button class="cal-nav-btn" onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <h4 id="cal-month-title"></h4>
+                    <button class="cal-nav-btn" onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+                  </div>
+                  <div class="cal-grid" id="cal-grid"></div>
+                </div>
+
+                <label class="form-label">Available Time Slots</label>
+                <div class="time-slots" id="time-slots">
+                  <div class="time-slot" onclick="selectTime(this, '9:00 AM')">9:00 AM</div>
+                  <div class="time-slot" onclick="selectTime(this, '9:30 AM')">9:30 AM</div>
+                  <div class="time-slot unavailable">10:00 AM</div>
+                  <div class="time-slot" onclick="selectTime(this, '10:30 AM')">10:30 AM</div>
+                  <div class="time-slot" onclick="selectTime(this, '11:00 AM')">11:00 AM</div>
+                  <div class="time-slot unavailable">11:30 AM</div>
+                  <div class="time-slot" onclick="selectTime(this, '12:00 PM')">12:00 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '1:00 PM')">1:00 PM</div>
+                  <div class="time-slot unavailable">2:00 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '2:30 PM')">2:30 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '3:00 PM')">3:00 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '4:00 PM')">4:00 PM</div>
+                  <div class="time-slot unavailable">4:30 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '5:00 PM')">5:00 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '6:00 PM')">6:00 PM</div>
+                  <div class="time-slot" onclick="selectTime(this, '7:00 PM')">7:00 PM</div>
+                </div>
+
+                <div class="step-nav">
+                  <button class="btn-back" onclick="goToStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+                  <button class="btn-next" onclick="goToStep(3)">Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- ── STEP 3: Add-Ons ── -->
+              <div class="booking-step" id="step-3">
+                <h2 class="step-title">Enhance Your Experience</h2>
+                <p class="step-subtitle">Complement your treatment with one of our curated add-ons — mention any at checkout if you'd like to add multiple.</p>
+
+                <div class="addon-toggles">
+                  <div class="addon-row" onclick="toggleAddon(this, 'Eye Contour Treatment', 600)">
+                    <div class="addon-left">
+                      <div class="addon-dot"><i class="fas fa-eye"></i></div>
+                      <div class="addon-info">
+                        <h5>Eye Contour Treatment</h5>
+                        <p>Reduces puffiness and dark circles · 15 min</p>
+                      </div>
+                    </div>
+                    <div class="addon-right">
+                      <span class="addon-price">+₹600</span>
+                      <div class="toggle-switch"></div>
+                    </div>
+                  </div>
+                  <div class="addon-row" onclick="toggleAddon(this, 'Paraffin Hand Wrap', 700)">
+                    <div class="addon-left">
+                      <div class="addon-dot"><i class="fas fa-hand-sparkles"></i></div>
+                      <div class="addon-info">
+                        <h5>Paraffin Hand Wrap</h5>
+                        <p>Deeply moisturising warm wax treatment · 20 min</p>
+                      </div>
+                    </div>
+                    <div class="addon-right">
+                      <span class="addon-price">+₹700</span>
+                      <div class="toggle-switch"></div>
+                    </div>
+                  </div>
+                  <div class="addon-row" onclick="toggleAddon(this, 'Scalp Rejuvenation', 800)">
+                    <div class="addon-left">
+                      <div class="addon-dot"><i class="fas fa-magic"></i></div>
+                      <div class="addon-info">
+                        <h5>Scalp Rejuvenation</h5>
+                        <p>Bhringraj oil scalp massage for stress relief · 20 min</p>
+                      </div>
+                    </div>
+                    <div class="addon-right">
+                      <span class="addon-price">+₹800</span>
+                      <div class="toggle-switch"></div>
+                    </div>
+                  </div>
+                  <div class="addon-row" onclick="toggleAddon(this, 'Hot Stone Upgrade', 900)">
+                    <div class="addon-left">
+                      <div class="addon-dot"><i class="fas fa-fire"></i></div>
+                      <div class="addon-info">
+                        <h5>Hot Stone Upgrade</h5>
+                        <p>Add Himalayan hot stones to any massage</p>
+                      </div>
+                    </div>
+                    <div class="addon-right">
+                      <span class="addon-price">+₹900</span>
+                      <div class="toggle-switch"></div>
+                    </div>
+                  </div>
+                  <div class="addon-row" onclick="toggleAddon(this, 'Champagne Toast', 1200)">
+                    <div class="addon-left">
+                      <div class="addon-dot"><i class="fas fa-wine-glass-alt"></i></div>
+                      <div class="addon-info">
+                        <h5>Champagne Toast</h5>
+                        <p>Chilled welcome drink for you or your partner</p>
+                      </div>
+                    </div>
+                    <div class="addon-right">
+                      <span class="addon-price">+₹1,200</span>
+                      <div class="toggle-switch"></div>
+                    </div>
+                  </div>
+                  <div class="addon-row" onclick="toggleAddon(this, 'Take-Home Ritual Kit', 1500)">
+                    <div class="addon-left">
+                      <div class="addon-dot"><i class="fas fa-box-open"></i></div>
+                      <div class="addon-info">
+                        <h5>Take-Home Ritual Kit</h5>
+                        <p>Curated botanical products to extend the experience</p>
+                      </div>
+                    </div>
+                    <div class="addon-right">
+                      <span class="addon-price">+₹1,500</span>
+                      <div class="toggle-switch"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-nav">
+                  <button class="btn-back" onclick="goToStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                  <button class="btn-next" onclick="goToStep(4)">Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- ── STEP 4: Details ── -->
+              <div class="booking-step" id="step-4">
+                <h2 class="step-title">Your Details</h2>
+                <p class="step-subtitle">We just need a few details to confirm your booking. All information is kept strictly private.</p>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">First Name <span style="color:#c0392b">*</span></label>
+                    <input type="text" class="form-input" id="first-name" placeholder="Priya" oninput="updateDetail('name')" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Last Name <span style="color:#c0392b">*</span></label>
+                    <input type="text" class="form-input" id="last-name" placeholder="Sharma" oninput="updateDetail('name')" />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Email Address <span style="color:#c0392b">*</span></label>
+                    <input type="email" class="form-input" id="email" placeholder="priya@example.com" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone Number <span style="color:#c0392b">*</span></label>
+                    <input type="tel" class="form-input" id="phone" placeholder="+91 98765 43210" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">How did you hear about us?</label>
+                  <select class="form-select" id="referral">
+                    <option value="" disabled selected>Please select</option>
+                    <option>Instagram</option>
+                    <option>Google Search</option>
+                    <option>Friend / Family</option>
+                    <option>Walk-in</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Health Notes / Special Requests <span style="color:var(--text-light); font-weight:400;">(optional)</span></label>
+                  <textarea class="form-textarea" placeholder="Any allergies, injuries, or preferences our therapist should know about..." style="min-height:110px;"></textarea>
+                </div>
+
+                <div class="form-group" style="display:flex; gap:10px; align-items:flex-start; margin-top:0.5rem;">
+                  <input type="checkbox" id="consent" style="margin-top:4px; accent-color:var(--primary-color); width:16px; height:16px; flex-shrink:0;" />
+                  <label for="consent" style="font-size:0.85rem; color:var(--text-light); line-height:1.6; cursor:pointer;">
+                    I agree to Serenity Spa's <a href="terms.html" style="color:var(--primary-color);">Terms & Conditions</a> and <a href="privacy-policy.html" style="color:var(--primary-color);">Privacy Policy</a>. I understand that a 24-hour cancellation notice is required.
+                  </label>
+                </div>
+
+                <div class="step-nav">
+                  <button class="btn-back" onclick="goToStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
+                  <button class="btn-next" onclick="goToStep(5)">Review Booking <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- ── STEP 5: Review & Confirm ── -->
+              <div class="booking-step" id="step-5">
+                <h2 class="step-title">Review &amp; Confirm</h2>
+                <p class="step-subtitle">Please check your booking details below before confirming. You'll receive an email confirmation immediately.</p>
+
+                <div class="info-card" style="margin-bottom:1rem;">
+                  <div class="info-icon"><i class="fas fa-spa"></i></div>
+                  <div class="info-text">
+                    <h4>Treatment</h4>
+                    <p id="review-treatment">—</p>
+                  </div>
+                </div>
+                <div class="info-card" style="margin-bottom:1rem;">
+                  <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <div class="info-text">
+                    <h4>Date &amp; Time</h4>
+                    <p id="review-datetime">—</p>
+                  </div>
+                </div>
+                <div class="info-card" style="margin-bottom:1rem;">
+                  <div class="info-icon"><i class="fas fa-user"></i></div>
+                  <div class="info-text">
+                    <h4>Therapist</h4>
+                    <p id="review-therapist">—</p>
+                  </div>
+                </div>
+                <div class="info-card" style="margin-bottom:1rem;">
+                  <div class="info-icon"><i class="fas fa-plus-circle"></i></div>
+                  <div class="info-text">
+                    <h4>Add-Ons</h4>
+                    <p id="review-addons">None selected</p>
+                  </div>
+                </div>
+                <div class="info-card" style="margin-bottom:1rem;">
+                  <div class="info-icon"><i class="fas fa-tag"></i></div>
+                  <div class="info-text">
+                    <h4>Total Amount</h4>
+                    <p id="review-total" style="font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--primary-color); font-weight:700;">—</p>
+                  </div>
+                </div>
+
+                <div style="background:rgba(212,175,55,0.08); border:1px solid rgba(212,175,55,0.3); border-radius:var(--border-radius); padding:1rem 1.2rem; margin-bottom:1.5rem; font-size:0.85rem; color:var(--text-light); line-height:1.7;">
+                  <i class="fas fa-info-circle" style="color:var(--accent-color); margin-right:6px;"></i>
+                  Payment is collected at the spa on the day of your visit. We accept cash, UPI, and all major cards.
+                </div>
+
+                <div class="step-nav">
+                  <button class="btn-back" onclick="goToStep(4)"><i class="fas fa-arrow-left"></i> Back</button>
+                  <button class="btn-next" style="background:var(--accent-color); padding:14px 36px;" onclick="confirmBooking()">
+                    <i class="fas fa-check-circle"></i> Confirm Booking
+                  </button>
+                </div>
+              </div>
+
+            </div><!-- /booking-left -->
+
+            <!-- RIGHT COLUMN: Summary -->
+            <div class="booking-summary" data-aos="fade-left">
+              <div class="summary-header">
+                <h3>Booking Summary</h3>
+                <p>Updated in real-time</p>
+              </div>
+              <div class="summary-body">
+                <div class="summary-row">
+                  <span class="summary-label">Treatment</span>
+                  <span class="summary-value empty" id="sum-treatment">Not selected</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Duration</span>
+                  <span class="summary-value" id="sum-duration">60 min</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Therapist</span>
+                  <span class="summary-value empty" id="sum-therapist">Not selected</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Date</span>
+                  <span class="summary-value empty" id="sum-date">Not selected</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Time</span>
+                  <span class="summary-value empty" id="sum-time">Not selected</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Add-Ons</span>
+                  <span class="summary-value empty" id="sum-addons">None</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-total">
+                  <span>Total</span>
+                  <span class="summary-total-price" id="sum-total">₹0</span>
+                </div>
+              </div>
+              <div class="summary-note">
+                <i class="fas fa-shield-alt"></i>
+                Free cancellation up to 24 hours before your appointment.
+              </div>
+            </div>
+          </div><!-- /booking-layout -->
+        </div><!-- /booking-form-wrap -->
+
+        <!-- ── Confirmation screen ── -->
+        <div class="confirmation-screen" id="confirmation-screen">
+          <div class="confirm-icon"><i class="fas fa-check"></i></div>
+          <h2>Booking Confirmed!</h2>
+          <p>Thank you for choosing Serenity Spa. A confirmation has been sent to your email. We look forward to welcoming you.</p>
+          <div class="confirm-ref" id="confirm-ref-code">SSP-000000</div>
+          <div class="confirm-actions">
+            <a href="index.html" class="book-now-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+              <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="treatments.html" class="tour-btn" style="background:transparent; color:var(--primary-color); border:1.5px solid var(--primary-color); text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:var(--border-radius); font-weight:600;">
+              <i class="fas fa-spa"></i> Explore More
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Serenity Spa</h3>
+            <p>Your premier destination for relaxation and wellness. We combine ancient healing traditions with modern luxury to create transformative experiences.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="treatments.html">Treatments</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="treatments.html">Massage Therapy</a></li>
+              <li><a href="treatments.html">Facial Treatments</a></li>
+              <li><a href="treatments.html">Body Treatments</a></li>
+              <li><a href="treatments.html">Hydrotherapy</a></li>
+              <li><a href="treatments.html">Wellness Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> 14, MG Road, Indiranagar, Bengaluru – 560038</p>
+              <p><i class="fas fa-phone"></i> +91 80 4567 8901</p>
+              <p><i class="fas fa-envelope"></i> hello@serenityspa.in</p>
+              <p><i class="fas fa-clock"></i> Mon–Sun: 9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Serenity Spa. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./JS/booking.js"></script>
+    <script src="./JS/Index.js"></script>
+  </body>
+</html>

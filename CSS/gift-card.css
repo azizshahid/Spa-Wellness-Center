@@ -1,0 +1,1235 @@
+/* ═══════════════════════════════════════
+         GIFT CARDS PAGE — STYLES
+         ═══════════════════════════════════════ */
+
+/* ── Gift Card Visual ── */
+.card-preview-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.gift-card-visual {
+  width: 420px;
+  height: 255px;
+  border-radius: 18px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease;
+  cursor: pointer;
+  box-shadow:
+    0 30px 80px rgba(45, 90, 39, 0.35),
+    0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gift-card-visual:hover {
+  transform: rotateY(8deg) rotateX(-4deg) translateY(-8px);
+  box-shadow:
+    0 40px 100px rgba(45, 90, 39, 0.4),
+    0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gift-card-visual.flipped {
+  transform: rotateY(180deg);
+}
+
+/* front face */
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #1a3d16 0%, #2d5a27 45%, #3d7a30 100%);
+}
+
+/* animated shimmer overlay */
+.card-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(212, 175, 55, 0.08) 50%,
+    transparent 70%
+  );
+  background-size: 300% 300%;
+  animation: shimmer 4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* botanical pattern */
+.card-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(212, 175, 55, 0.12) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(143, 188, 143, 0.15) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  padding: 28px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.card-logo i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.card-gift-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+}
+
+.card-amount-display {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-amount-display .card-currency {
+  font-size: 1.3rem;
+  vertical-align: super;
+  opacity: 0.8;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-recipient-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  min-height: 1.5rem;
+}
+
+.card-accent-line {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+  margin-bottom: 6px;
+}
+
+.card-expiry {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
+  text-align: right;
+}
+
+.card-chip {
+  width: 34px;
+  height: 26px;
+  background: linear-gradient(135deg, var(--accent-color), #b8941f);
+  border-radius: 5px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* back face */
+.card-back {
+  background: linear-gradient(135deg, #1a2e18 0%, #243d1f 100%);
+  transform: rotateY(180deg);
+}
+
+.card-back-stripe {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.card-back-content {
+  position: relative;
+  z-index: 1;
+  padding: 28px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.card-code-display {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: "Courier New", monospace;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.card-back-note {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── Card theme selector ── */
+.theme-picker {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.theme-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.theme-swatch.active {
+  border-color: var(--accent-color);
+  transform: scale(1.18);
+}
+
+.swatch-forest {
+  background: linear-gradient(135deg, #1a3d16, #3d7a30);
+}
+.swatch-dusk {
+  background: linear-gradient(135deg, #2c1810, #7a4030);
+}
+.swatch-midnight {
+  background: linear-gradient(135deg, #0d1f3c, #1e4080);
+}
+.swatch-sand {
+  background: linear-gradient(135deg, #5c4a2a, #9c7a3a);
+}
+
+/* ── Form section ── */
+.gift-form-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.form-section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--light-bg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section-title:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.form-section-title i {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.78rem;
+  flex-shrink: 0;
+}
+
+/* ── Amount grid ── */
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 1.4rem;
+}
+
+.amount-btn {
+  border: 1.5px solid #dde3dd;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 14px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "Playfair Display", serif;
+}
+
+.amount-btn:hover {
+  border-color: var(--secondary-color);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.amount-btn.selected {
+  border-color: var(--primary-color);
+  background: rgba(45, 90, 39, 0.05);
+}
+
+.amount-btn .amt-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.amount-btn .amt-label {
+  display: block;
+  font-size: 0.65rem;
+  font-family: "Inter", sans-serif;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.amount-btn.custom-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.custom-amount-row {
+  display: none;
+  margin-bottom: 1.4rem;
+  position: relative;
+}
+
+.custom-amount-row.visible {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-amount-row span {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.custom-amount-row input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid #dde3dd;
+  border-radius: var(--border-radius);
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  outline: none;
+  transition: var(--transition);
+}
+
+.custom-amount-row input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.08);
+}
+
+/* ── Occasion chips ── */
+.occasion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.4rem;
+}
+
+.occasion-chip {
+  border: 1.5px solid #dde3dd;
+  background: var(--white);
+  color: var(--text-dark);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.occasion-chip:hover {
+  border-color: var(--secondary-color);
+}
+
+.occasion-chip.selected {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* ── Delivery toggle ── */
+.delivery-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.delivery-option {
+  border: 1.5px solid #dde3dd;
+  border-radius: var(--border-radius);
+  padding: 1.1rem 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  background: var(--white);
+}
+
+.delivery-option:hover {
+  border-color: var(--secondary-color);
+}
+
+.delivery-option.selected {
+  border-color: var(--primary-color);
+  background: rgba(45, 90, 39, 0.04);
+}
+
+.delivery-option.selected::after {
+  content: "\f058";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.delivery-option h5 {
+  font-size: 0.88rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.delivery-option h5 i {
+  color: var(--accent-color);
+}
+
+.delivery-option p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Summary sidebar ── */
+.gift-summary {
+  position: sticky;
+  top: 100px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gift-summary-header {
+  background: linear-gradient(135deg, var(--primary-color), #1a3d16);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-summary-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(212, 175, 55, 0.18) 0%,
+    transparent 60%
+  );
+}
+
+.gift-summary-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+
+.gift-summary-header p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  position: relative;
+}
+
+/* mini card preview inside summary */
+.summary-card-mini {
+  margin: 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a3d16, #2d5a27);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(45, 90, 39, 0.3);
+}
+
+.summary-card-mini::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 50%
+  );
+}
+
+.scm-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.scm-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 0.82rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.scm-logo i {
+  color: var(--accent-color);
+}
+
+.scm-tag {
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.scm-amount {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  position: relative;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.scm-amount sup {
+  font-size: 0.9rem;
+  vertical-align: super;
+}
+
+.scm-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.scm-recipient {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Playfair Display", serif;
+  transition: color 0.3s;
+}
+
+.scm-valid {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.summary-body {
+  padding: 0 1.2rem 1.2rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--light-bg);
+  font-size: 0.85rem;
+}
+
+.summary-row:last-of-type {
+  border-bottom: none;
+}
+.summary-row .s-label {
+  color: var(--text-light);
+}
+.summary-row .s-value {
+  color: var(--text-dark);
+  font-weight: 500;
+  text-align: right;
+}
+.summary-row .s-value.empty {
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.78rem;
+}
+
+.summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 0.5rem;
+  border-top: 2px solid var(--light-bg);
+  margin-top: 0.5rem;
+}
+
+.summary-total-row span:first-child {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+}
+
+.summary-total-price {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.summary-note {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  text-align: center;
+  padding: 0.8rem 1.2rem 1.2rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--light-bg);
+}
+
+.summary-note i {
+  color: var(--accent-color);
+  margin-right: 4px;
+}
+
+/* ── How it works steps ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+.how-grid::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 14px);
+  right: calc(12.5% + 14px);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+}
+
+.how-step {
+  text-align: center;
+  position: relative;
+}
+
+.how-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 auto 1.2rem;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.how-step:hover .how-num {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.08);
+}
+
+.how-step h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.how-step p {
+  font-size: 0.83rem;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+/* ── Why gift cards ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.why-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-bottom-color: var(--accent-color);
+}
+
+.why-icon {
+  width: 58px;
+  height: 58px;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+}
+
+.why-icon i {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.why-card h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  margin-bottom: 0.6rem;
+}
+
+.why-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ── Redeem section ── */
+.redeem-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.redeem-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-hover);
+}
+
+.redeem-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.redeem-image:hover img {
+  transform: scale(1.04);
+}
+
+.redeem-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.redeem-content p {
+  color: var(--text-light);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+.redeem-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.redeem-step-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.redeem-step-num {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  border: 1.5px solid var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* ── Confirmation overlay ── */
+.purchase-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  backdrop-filter: blur(6px);
+}
+
+.purchase-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.purchase-modal {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  max-width: 520px;
+  width: 100%;
+  overflow: hidden;
+  transform: scale(0.94) translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.purchase-overlay.open .purchase-modal {
+  transform: scale(1) translateY(0);
+}
+
+.modal-gift-card {
+  height: 180px;
+  background: linear-gradient(135deg, #1a3d16, #2d5a27, #3d7a30);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-gift-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 75% 25%,
+    rgba(212, 175, 55, 0.15) 0%,
+    transparent 50%
+  );
+}
+
+.modal-card-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.modal-card-content i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.6rem;
+  display: block;
+  animation: floatIcon 2.5s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.modal-card-content .modal-amount {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.modal-body-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.modal-body-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.modal-body-content p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.voucher-code-box {
+  background: var(--light-bg);
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 1.4rem;
+}
+
+.voucher-code-box .code-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.voucher-code-box .code-value {
+  font-family: "Courier New", monospace;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline-green {
+  background: transparent;
+  border: 1.5px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 11px 24px;
+  border-radius: var(--border-radius);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "Inter", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.btn-outline-green:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* ── CTA banner ── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--primary-color), #1a3d16);
+  border-radius: var(--border-radius);
+  padding: 4rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(143, 188, 143, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(212, 175, 55, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.cta-banner h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
+  position: relative;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--white);
+  padding: 13px 28px;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ghost:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ── FAQ ── */
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--light-bg);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: var(--primary-color);
+  text-align: left;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--accent-color);
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 1.5px solid var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.faq-item.open .faq-icon {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.3s ease;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  padding: 0;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-bottom: 1.1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .gift-form-layout {
+    grid-template-columns: 1fr;
+  }
+  .gift-summary {
+    position: static;
+  }
+  .how-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .how-grid::before {
+    display: none;
+  }
+  .redeem-layout {
+    grid-template-columns: 1fr;
+  }
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .gift-card-visual {
+    width: 320px;
+    height: 194px;
+  }
+  .amount-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-banner {
+    padding: 3rem 1.5rem;
+  }
+  .card-amount-display {
+    font-size: 2rem;
+  }
+}
