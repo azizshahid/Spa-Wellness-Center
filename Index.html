@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serenity Spa - Ultimate Relaxation Experience</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -45,13 +45,14 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+      <div class="hero-background"></div>
       <div class="hero-container">
-        <div class="hero-image" data-aos="fade-right" data-aos-duration="1000">
+        <!-- <div class="hero-image" data-aos="fade-right" data-aos-duration="1000">
           <img
             src="./assets/images/hero-image/Spa hero Image.jpg"
             alt="Serene Spa Experience"
           />
-        </div>
+        </div> -->
         <div
           class="hero-content"
           data-aos="fade-left"
@@ -153,72 +154,90 @@
 
     <!-- Testimonials -->
     <section class="testimonials" data-aos="fade-up">
-  <div class="container">
-    <div class="testimonials-content">
-      <div class="testimonials-image" data-aos="fade-right">
-        <img src="./assets/images/Testimonials/Emma.png" alt="Happy Client" />
-      </div>
-      <div class="testimonials-cards" data-aos="fade-left">
-        <h2>Client Experiences</h2>
-        <div class="testimonial-carousel">
-          <div class="testimonial-card active">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>
-              "The most relaxing experience I've ever had. The aromatherapy massage was absolutely divine!"
-            </p>
-            <div class="client-info">
-              <img src="/placeholder.svg?height=50&width=50&text=SJ" alt="Sarah Johnson" />
-              <div>
-                <h4>Sarah Johnson</h4>
-                <span>Regular Client</span>
-              </div>
-            </div>
+      <div class="container">
+        <div class="testimonials-content">
+          <div class="testimonials-image" data-aos="fade-right">
+            <img
+              src="./assets/images/Testimonials/Emma.png"
+              alt="Happy Client"
+            />
           </div>
-          <div class="testimonial-card" data-aos="fade-in">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>
-              "Professional staff, luxurious facilities, and treatments that truly transform. Highly recommended!"
-            </p>
-            <div class="client-info">
-              <img src="/placeholder.svg?height=50&width=50&text=MC" alt="Michael Chen" />
-              <div>
-                <h4>Michael Chen</h4>
-                <span>VIP Member</span>
+          <div class="testimonials-cards" data-aos="fade-left">
+            <h2>Client Experiences</h2>
+            <div class="testimonial-carousel">
+              <div class="testimonial-card active">
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i> <i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+                <p>
+                  "The most relaxing experience I've ever had. The aromatherapy
+                  massage was absolutely divine!"
+                </p>
+                <div class="client-info">
+                  <img
+                    src="/placeholder.svg?height=50&width=50&text=SJ"
+                    alt="Sarah Johnson"
+                  />
+                  <div>
+                    <h4>Sarah Johnson</h4>
+                    <span>Regular Client</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card" data-aos="fade-in">
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i> <i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+                <p>
+                  "Professional staff, luxurious facilities, and treatments that
+                  truly transform. Highly recommended!"
+                </p>
+                <div class="client-info">
+                  <img
+                    src="/placeholder.svg?height=50&width=50&text=MC"
+                    alt="Michael Chen"
+                  />
+                  <div>
+                    <h4>Michael Chen</h4>
+                    <span>VIP Member</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card" data-aos="fade-in">
+                <div class="stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i> <i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+                <p>
+                  "A sanctuary of peace in the city. Every visit leaves me
+                  feeling renewed and refreshed."
+                </p>
+                <div class="client-info">
+                  <img
+                    src="/placeholder.svg?height=50&width=50&text=ED"
+                    alt="Emma Davis"
+                  />
+                  <div>
+                    <h4>Emma Davis</h4>
+                    <span>Wellness Enthusiast</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card" data-aos="fade-in">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>
-              "A sanctuary of peace in the city. Every visit leaves me feeling renewed and refreshed."
-            </p>
-            <div class="client-info">
-              <img src="/placeholder.svg?height=50&width=50&text=ED" alt="Emma Davis" />
-              <div>
-                <h4>Emma Davis</h4>
-                <span>Wellness Enthusiast</span>
-              </div>
+            <div class="testimonial-nav">
+              <button class="nav-dot active" data-slide="0"></button>
+              <button class="nav-dot" data-slide="1"></button>
+              <button class="nav-dot" data-slide="2"></button>
             </div>
           </div>
         </div>
-        <div class="testimonial-nav">
-          <button class="nav-dot active" data-slide="0"></button>
-          <button class="nav-dot" data-slide="1"></button>
-          <button class="nav-dot" data-slide="2"></button>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Virtual Gallery -->
     <section class="gallery">
@@ -393,6 +412,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="./Index.js"></script>
+    <script src="./JS/Index.js"></script>
   </body>
 </html>
